@@ -9,7 +9,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PageController? _pageController;
-  int activePage = 0;
+  CategoryModel? categoryModel = CategoryModel();
+  int activePage = 0, selectedCategory = 0;
   List banners = [
     {
       'image': 'assets/images/img_banner_2.png',
@@ -129,7 +130,8 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Container(
                           margin: EdgeInsets.only(
-                              right: (index == banners.length - 1) ? 0 : 10),
+                              right: (index == banners.length - 1) ? 0 : 5,
+                              left: (index == 0) ? 0 : 5),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
@@ -140,7 +142,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Container(
                           margin: EdgeInsets.only(
-                              right: (index == banners.length - 1) ? 0 : 10),
+                              right: (index == banners.length - 1) ? 0 : 5,
+                              left: (index == 0) ? 0 : 5),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             gradient: LinearGradient(
@@ -214,106 +217,62 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(height: AppConfig.defaultMargin - 8),
             headerWidget(),
-            SizedBox(height: AppConfig.defaultMargin),
+            SizedBox(height: AppConfig.defaultMargin - 10),
             Expanded(
                 child: ListView(
               children: [
+                SizedBox(height: AppConfig.defaultMargin - 10),
                 searchWidget(),
                 SizedBox(
-                  height: AppConfig.defaultMargin - 6,
+                  height: AppConfig.defaultMargin - 10,
                 ),
                 bannerWidget(),
                 Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
-                  child: Wrap(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppConfig.defaultMargin,
+                      vertical: AppConfig.defaultMargin),
+                  child:
+                      // category
+                      Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      for (var i = 0; i < 3; i++)
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.5 -
-                              AppConfig.defaultMargin,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(
-                                AppConfig.cardBorderRadius),
-                            color: Colors.white,
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black12,
-                                blurRadius: 10,
-                                spreadRadius: 2,
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // image
-                              Stack(
-                                children: [
-                                  ClipRRect(
-                                      borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(
-                                              AppConfig.cardBorderRadius),
-                                          topRight: Radius.circular(
-                                              AppConfig.cardBorderRadius)),
-                                      child: Image.asset(
-                                        'assets/images/img_banner_2.png',
-                                        fit: BoxFit.cover,
-                                        height: 110,
-                                        frameBuilder:
-                                            (context, child, frame, _) {
-                                          return AnimatedOpacity(
-                                            duration: const Duration(
-                                                milliseconds: 1000),
-                                            opacity: frame == null ? 0 : 1,
-                                            child: child,
-                                          );
-                                        },
-                                      )),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 10),
-                                child: Text("Pura Tanah Lot",
-                                    style: AppConfig.titleFontStyle.copyWith(
-                                        color: Colors.black87, fontSize: 12)),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8),
-                                child: Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.location_on_outlined,
-                                      size: 18,
-                                    ),
-                                    const SizedBox(
-                                      width: 3,
-                                    ),
-                                    Expanded(
-                                      child: Text("Pura Tanah Lot",
-                                          style: AppConfig.subTitleFontStyle
-                                              .copyWith(
-                                                  color: Colors.black87,
-                                                  fontWeight: FontWeight.w400,
-                                                  fontSize: 12)),
-                                    ),
-                                  ],
+                      Text(
+                        "Category",
+                        style: AppConfig.titleFontStyle
+                            .copyWith(fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            for (var i = 0; i < listCategory.length; i++)
+                              Container(
+                                margin: EdgeInsets.only(
+                                    right:
+                                        (i == listCategory.length - 1) ? 0 : 5),
+                                child: CategoryWidget(
+                                  listCategory[i].image!,
+                                  nameCategory: listCategory[i].name,
+                                  selected:
+                                      (selectedCategory == listCategory[i].id)
+                                          ? true
+                                          : false,
+                                  onTap: () {
+                                    setState(() {
+                                      selectedCategory = listCategory[i].id!;
+                                    });
+                                    if (kDebugMode) {
+                                      print(selectedCategory);
+                                    }
+                                  },
                                 ),
-                              ),
-                              SizedBox(
-                                height: AppConfig.defaultMargin - 5,
-                              ),
-                            ],
-                          ),
+                              )
+                          ],
                         ),
+                      )
                     ],
                   ),
                 )

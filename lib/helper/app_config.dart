@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppConfig {
-  static String appVersion = '1';
+  static String appVersion = '2';
   static double defaultMargin = 20;
   static double cardBorderRadius = 10;
 
