@@ -1,17 +1,18 @@
 class ProductModel {
-  final int? id;
-  final int? categoryId;
-  final String? name;
-  final String? description;
-  final List? facilities;
-  final String? image;
-  final List? imagesPreview;
-  final int? price;
-  final double? rating;
-  final String? location;
-  final String? urlLocation;
-  final int? isReservation;
-  final int? isFavorite;
+  int? id;
+  int? categoryId;
+  String? name;
+  String? description;
+  List? facilities;
+  String? image;
+  List? imagesPreview;
+  int? price;
+  double? rating;
+  String? location;
+  String? urlLocation;
+  int? isReservation;
+  int? isFavorite;
+  int? isPopular;
 
   ProductModel({
     this.id,
@@ -27,32 +28,35 @@ class ProductModel {
     this.urlLocation,
     this.isReservation,
     this.isFavorite,
+    this.isPopular,
   });
 }
 
 List<ProductModel> listProduct = [
   ProductModel(
-      id: 1,
-      categoryId: 1,
-      name: "Mount Batur",
-      description:
-          "Mount Batur is located in Kintamani, Bangli. Mount Batur is known by the Balinese people as a special mountain besides Mount Agung. This mountain is also known as one of the tourist attractions in Bali. The attraction of this mountain is the lake with the same name, namely Lake Batur. This lake is located at an altitude of 1,050 meters above sea level with an area of ​​16 square kilometers and an average depth of 50.8 kilometers. Not only that, Mount Batur's fame is also due to being awarded the UNESCO title as the first mountain geopark in Indonesia. So, if you manage to climb this mountain, it means that you have visited one of the places recognized by UNESCO. The height of Mount Batur is 1,717 masl. If it's your first time climbing a mountain it's also allowed. This is because the existing tracks are fairly safe for beginners. It takes about 2-3 hours to reach the peak.",
-      facilities: [],
-      image: "assets/images/gunung_batur.jpg",
-      imagesPreview: [
-        'https://source.unsplash.com/1600x900/?mount-batur&1',
-        'https://source.unsplash.com/1600x900/?mount-batur&2',
-        'https://source.unsplash.com/1600x900/?mount-batur&3',
-        'https://source.unsplash.com/1600x900/?mount-batur&4',
-        'https://source.unsplash.com/1600x900/?mount-batur&5'
-      ],
-      price: 0,
-      rating: 4.5,
-      location: "Kintamani, Bangli - Bali",
-      urlLocation:
-          "https://www.google.com/maps/place/Gn.+Batur/@-8.2401297,115.3687396,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd1f403c8e8ee3f:0xd38045afa18670b4!8m2!3d-8.2401299!4d115.3774944",
-      isReservation: 0,
-      isFavorite: 1),
+    id: 1,
+    categoryId: 1,
+    name: "Mount Batur",
+    description:
+        "Mount Batur is located in Kintamani, Bangli. Mount Batur is known by the Balinese people as a special mountain besides Mount Agung. This mountain is also known as one of the tourist attractions in Bali. The attraction of this mountain is the lake with the same name, namely Lake Batur. This lake is located at an altitude of 1,050 meters above sea level with an area of ​​16 square kilometers and an average depth of 50.8 kilometers. Not only that, Mount Batur's fame is also due to being awarded the UNESCO title as the first mountain geopark in Indonesia. So, if you manage to climb this mountain, it means that you have visited one of the places recognized by UNESCO. The height of Mount Batur is 1,717 masl. If it's your first time climbing a mountain it's also allowed. This is because the existing tracks are fairly safe for beginners. It takes about 2-3 hours to reach the peak.",
+    facilities: [],
+    image: "assets/images/gunung_batur.jpg",
+    imagesPreview: [
+      'https://source.unsplash.com/1600x900/?mount-batur&1',
+      'https://source.unsplash.com/1600x900/?mount-batur&2',
+      'https://source.unsplash.com/1600x900/?mount-batur&3',
+      'https://source.unsplash.com/1600x900/?mount-batur&4',
+      'https://source.unsplash.com/1600x900/?mount-batur&5'
+    ],
+    price: 0,
+    rating: 4.5,
+    location: "Kintamani, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Gn.+Batur/@-8.2401297,115.3687396,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd1f403c8e8ee3f:0xd38045afa18670b4!8m2!3d-8.2401299!4d115.3774944",
+    isReservation: 0,
+    isFavorite: 1,
+    isPopular: 1,
+  ),
   ProductModel(
     id: 2,
     categoryId: 1,
@@ -75,6 +79,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Gn.+Catur/@-8.2475708,115.177238,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd18eaadf660b7b:0x48cdcef1aca7cd65!8m2!3d-8.247571!4d115.1859928",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 0,
   ),
   ProductModel(
     id: 3,
@@ -98,6 +103,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Gn.+Abang/@-8.2802776,115.4206896,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd1f7adac28eb37:0x7e0239cd53b4be4b!8m2!3d-8.2802778!4d115.4294444",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 0,
   ),
   ProductModel(
     id: 4,
@@ -121,6 +127,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Gn.+Batukaru/@-8.334722,115.079023,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd187f8b41bd26f:0x688908b6268505d3!8m2!3d-8.3347222!4d115.0877778",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 0,
   ),
   ProductModel(
     id: 5,
@@ -148,6 +155,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Kelingking+Beach+Nusa+Penida/@-8.4898383,115.038712,10z/data=!4m9!1m2!2m1!1spantai+kelingking!3m5!1s0x2dd26f1616cd2cc7:0xee84b7df0afbff19!8m2!3d-8.7503865!4d115.4726218!15sChFwYW50YWkga2VsaW5na2luZ1oTIhFwYW50YWkga2VsaW5na2luZ5IBEnRvdXJpc3RfYXR0cmFjdGlvbpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VReWEzUlFaVmgzRUFF",
     isReservation: 0,
     isFavorite: 1,
+    isPopular: 1,
   ),
   ProductModel(
     id: 6,
@@ -171,6 +179,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Jl.+Pantai+Seseh,+Kec.+Mengwi,+Kabupaten+Badung,+Bali,+Indonesia/@-8.633155,115.114563,13z/data=!4m5!3m4!1s0x2dd23812bd379101:0x6be9fe0021552e02!8m2!3d-8.633155!4d115.1145627?hl=en-US",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 0,
   ),
   ProductModel(
     id: 7,
@@ -192,6 +201,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Nusa+Penida+Tour+-+Atuh+Beach/@-8.7734113,115.6130639,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd2779b403c8185:0x25d68418b583cab3!8m2!3d-8.7734116!4d115.6218187",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 1,
   ),
   ProductModel(
     id: 8,
@@ -212,6 +222,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/search/Pantai+Serenity+bali/@-8.4996574,114.7812353,10z/data=!3m1!4b1",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 0,
   ),
   ProductModel(
     id: 9,
@@ -233,6 +244,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/search/Pantai+Pasut+Jalan+Raya+Pasut+Tibubiu+Kec.+Kerambitan,+Kabupaten+Tabanan,+Bali/@-8.563438,115.036742,13z?hl=en-US",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 0,
   ),
   ProductModel(
     id: 10,
@@ -253,6 +265,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Pantai+Purnama/@-8.619297,115.309972,13z/data=!4m5!3m4!1s0x2dd215148c93693d:0x385d0c1b1fbff51b!8m2!3d-8.6192976!4d115.3099717?hl=en-US",
     isReservation: 0,
     isFavorite: 1,
+    isPopular: 1,
   ),
   ProductModel(
     id: 11,
@@ -275,6 +288,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Pantai+Melasti+Ungasan/@-8.8477419,115.1561857,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd25b937f74a77f:0xd7fc41e66544fbab!8m2!3d-8.8477419!4d115.1606704",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 1,
   ),
   ProductModel(
     id: 12,
@@ -301,6 +315,7 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Pantai+Batu+Belig/@-8.660057,115.1403734,14z/data=!4m8!1m2!2m1!1sPantai+Berawa+Canggu!3m4!1s0x2dd24774c0a631b1:0x9d16e84a9b99cabd!8m2!3d-8.6742449!4d115.1459553",
     isReservation: 0,
     isFavorite: 1,
+    isPopular: 0,
   ),
   ProductModel(
     id: 13,
@@ -309,7 +324,7 @@ List<ProductModel> listProduct = [
     description:
         "Suwehan Beach in Tanglad Nusa Penida offers a unique attraction where this beach has special characteristics and not all beaches in Bali are made into triangular beach icons like the famous brand Volcom, among local residents Suwehan Beach resembles the object of Pipi Island Thailand. Suwehan Beach is a beautiful white sandy beach and is still beautiful, the sea water is blue with waves that are not too big and surrounded by high coral cliffs.",
     facilities: [],
-    image: "assets/images/pantai_suwehan.jpg",
+    image: "assets/images/pantai_suwehan.jpeg",
     imagesPreview: [
       'https://www.baligetaway.co.id/wp-content/uploads/2014/10/keindahan-pantai-suwehan-nusa-penida.jpg',
       'https://www.baligetaway.co.id/wp-content/uploads/2014/10/pasir-putih-pantai-suwehan.jpg',
@@ -322,5 +337,335 @@ List<ProductModel> listProduct = [
         "https://www.google.com/maps/place/Suwehan+Beach/@-8.795374,115.5969334,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd279cfc7815793:0x2062f9f84602e8f5!8m2!3d-8.7953743!4d115.6056882",
     isReservation: 0,
     isFavorite: 0,
+    isPopular: 1,
+  ),
+  ProductModel(
+    id: 14,
+    categoryId: 3,
+    name: 'Baleka Resort & Spa',
+    description:
+        "Located in the colorful tourist district of Legian, Baleka Resort and Spa is close to everything that makes a Bali holiday enjoyable. This family-friendly property offers a choice of stylish room categories to anticipate all travel needs. It is a comfortable home base where guests are welcomed with warm Balinese hospitality. Baleka Resort and Spa is one of the best choices in Legian. Just a 5-minute walk from the white sandy beach of Legian Beach, Baleka Resort and Spa features an outdoor swimming pool with a swim-up bar, as well as modern Balinese architecture. Surrounded by gardens, the hotel also features spa treatments and free Wi-Fi. With plenty of natural light, air-conditioned rooms feature a private balcony, wooden furnishings and artwork. Guests have the convenience of a minibar and satellite TV, as well as free drinking water. The en suite bathroom comes with a shower or bath. Located between Kuta and Seminyak, Baleka Resort and Spa is a 20-minute drive from Ngurah Rai International Airport. Shuttle service is provided upon request. To relax, guests can take a dip in the outdoor swimming pool or enjoy a relaxing massage. Recreational activities and day trips can be arranged at the tour desk. Gula - Gula Restaurant serves a variety of Indonesian, Chinese and Western dishes. Meals can be served in the room.",
+    facilities: [
+      'Classic Room',
+      'Superior Room',
+      'Deluxe Room',
+      'Lagoon Room Pool View',
+      'Lagoon Room Pool Access',
+      'Two-Bedroom Family',
+      'Deluxe Day Bed'
+    ],
+    image: "assets/images/baleka-resort-spa.jpg",
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/baleka-resort-classic-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/balik-resort-spa-superior-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/baleka-resort-spa-deluxer-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/balek-resort-spa-lagoon-room-pool-view.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/baleka-resort-spa-lagoon-room-pool-access.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/baleka-resort-spa-two-bedroom-family.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/baleka-resort-spa-deluxe-day-bed.jpg',
+    ],
+    price: 380000,
+    rating: 4.3,
+    location: "Kuta, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Baleka+Resort+%26+Spa/@-8.700099,115.167293,15z/data=!4m8!3m7!1s0x0:0x4baec4abfebcfd26!5m2!4m1!1i2!8m2!3d-8.7000817!4d115.1673402",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 15,
+    categoryId: 3,
+    name: "Grand Inna Kuta",
+    description:
+        "Located on the white sandy beach of Kuta with its beautiful sunsets, Hotel Grand Inna Kuta offers direct access to the famous Kuta Beach besides being only a 5 - 10 minute walk to shopping malls and entertainment areas. Only 5 km from Ngurah Rai International Airport, 10 km from Denpasar City. With its refreshing hospitality concept, Grand Inna Kuta Hotel offers two different design styles in accommodation - Bali Wing and Beach Wing with a total of 322 rooms, family rooms and suites. Featuring a traditional room style with a private balcony in each room, Bali Wing is designed for those seeking a Balinese atmosphere. Alternatively, the modern touch at the Beach Wing offers a contemporary setting with a wide choice of views ranging from pool, sea or garden views.",
+    facilities: [
+      'Deluxe Room',
+      'Deluxe Pool View',
+      'Deluxe Sea View',
+      'Deluxe Pool Access',
+      'Superior Pool View',
+      'Executive Suite'
+    ],
+    image: 'assets/images/hotel_grand_inna.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/grand-inna-deluxe-room.jpg',
+      'https://baligetaway.co.id/wp-content/uploads/2014/10/Grand-Inna-Kuta-Deluxe-Pool-View.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/grand-inna-hotel-deluxe-sea-view.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/grand-inna-hotel-deluxe-pool-access.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/grand-inna-hotel-superior-pool-or-garden-view-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/grand-inna-hotel-superior-pool-access.jpg',
+    ],
+    price: 610000,
+    location: "Kuta, Bali",
+    rating: 4.5,
+    urlLocation:
+        "https://www.google.com/maps/place/Grand+Inna+Kuta/@-8.7231271,115.1683566,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd246bca25e1947:0xcfd2766242240538!5m2!4m1!1i2!8m2!3d-8.7231271!4d115.1705453",
+    isFavorite: 1,
+    isPopular: 1,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 16,
+    categoryId: 3,
+    name: "Swiss-Belhotel Petitenget",
+    description:
+        "Located in the heart of trendy Petitenget and surrounded by great restaurants, beach clubs, cafes and shops, Swiss-Belhotel Petitenget is the ideal choice for you! With easy access to popular places such as Petitenget Beach, Batu Belig Beach and Tanah Lot Temple, this hotel is only 12 km from Ngurah Rai International Airport and not far from the hotel, Swiss-Belhotel Petitenget Hotel is also located in the elite area of ​​Bali. classy. Where else will you live? It's happening all around you in Petitenget! Swiss-Belhotel Petitenget is a mid-range hotel in Bali, located in the heart of the trendy Petitenget area. The hotel offers 112 modern comfortably furnished rooms that combine contemporary décor with traditional Balinese touches to create the most peaceful and relaxing atmosphere. Enjoy delicious Balinese cuisine at our very own Paon Restaurant or relax at the trendy Sanjé Bar and Lounge, the perfect place to rejuvenate your mind and soul with signature cocktails and other Balinese specialties. Both are 'must do' if your food and drink adventure in Petitenget. And when your unforgettable day of adventure is over, enjoy a refreshing dip in our outdoor swimming pool and relax in the beautifully landscaped surroundings on the ground floor.",
+    facilities: [
+      'Deluxe Room',
+      'Deluxe Room Paddy View',
+      'Grand Deluxe Room',
+      'Raga SPA & Reflexology',
+      'Shuttle Bus To Petitenget Beach and Seminyak Square',
+      'Swimming Pool',
+      'Fitness Place'
+    ],
+    image: 'assets/images/hotel_petitenget.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/deluxe-room-swiss-belhotel-petitenget.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ricepaddy-swiss-belhotel-petitenget.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/grand-deluxe-room-swiss-belhotel-petitenget.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/raga-spa.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/kolam-renang-swiss-belhotel-petitenget.jpg'
+    ],
+    price: 300000,
+    rating: 4.4,
+    location: "Petitenget, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/The+Aveda+Boutique+Hotel/@-8.672205,115.16254,13z/data=!4m8!3m7!1s0x0:0x28e7a152c7a2b661!5m2!4m1!1i2!8m2!3d-8.671973!4d115.1625851?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 17,
+    categoryId: 3,
+    name: "Dafam Savvoya",
+    description:
+        "Ideally located at the crossroads of Denpasar, Sanur, Seminyak and Kuta, surrounded by state-of-the-art shopping malls, wholesale craft shops and entertainment. This location hosts a wide range of holiday needs with a luxurious lifestyle of privacy to enjoy and explore all the beauty of this paradise island. Hotel Dafam Savvoya Seminyak Bali provides 111 stylish rooms, 3 meeting rooms that can accommodate up to 120 people, Canting dining area that combines traditional and international dishes, and 2 refreshing swimming pools that reflect traditional Balinese hospitality and casual elegance. Only 30 minutes drive from and to the airport and few minutes to the famous Kuta Beach area. Hotel Dafam Savvoya Seminyak Bali is the ideal retreat to enjoy the Island of the Gods.",
+    facilities: ['Canting Restaurant', 'Ruang Meeting Kresna & Drupadi'],
+    image: 'assets/images/hotel_dafam_savvoya.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/dafam-savvoya-hotel-superior-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/dafam-savvoya-deluxe-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/dafam-savvoya-suite-room.jpg',
+    ],
+    price: 300000,
+    rating: 4.3,
+    location: "Seminyak, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Hotel+Dafam+Savvoya+Seminyak+Bali/@-8.68279,115.167034,13z/data=!4m8!3m7!1s0x0:0x23c8659171e5844c!5m2!4m1!1i2!8m2!3d-8.6828771!4d115.1672526?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 18,
+    categoryId: 3,
+    name: "Hotel Steenkool",
+    description:
+        "Enjoy your holiday in Bali with a pleasant stay at Hotel Steenkool Seminyak which is located on the main Sunset Road Seminyak, a good block No. 1, which is only 30 minutes from the airport and 15 minutes to Double Six Beach where you can enjoy the beautiful sunset over the beach. Bali. With 98 rooms, you can make the choice to stay at the superior Hotel Steenkool Seminyak or in our Junior suite with Balinese hospitality served by our staff. Enjoy a wide variety of food served on the buffet at breakfast and a la carte menu options at lunch and dinner. Spend your wonderful holiday relaxing in our swimming pool in front of Hotel Steenkool Seminyak bar while enjoying fresh cocktails on the lobby floor, you can also play pool after lunch or dinner on the lobby floor. Enjoy our BBQ Buffet Dinner only on Saturday night with live acoustics for your unforgettable weekend.",
+    facilities: ['Restaurant and Bar', 'Meeting Room'],
+    image: 'assets/images/hotel_steenkool.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-steenkool-seminyak-suite-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-steenkool-seminyak-superior-king.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-steenkool-superior-twin.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/steenkool-seminyak-hotels-restaurant.png',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/steenkool-seminyak-hotels-meeting-room.png'
+    ],
+    price: 280000,
+    rating: 4.2,
+    location: "Seminyak, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Steenkool+Seminyak+Hotel/@-8.692541,115.173326,13z/data=!4m8!3m7!1s0x0:0xb803634656098ac7!5m2!4m1!1i2!8m2!3d-8.692541!4d115.173326?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 19,
+    categoryId: 3,
+    name: "Akmani Legian",
+    description:
+        "Located in a prime location of Legian, Hotel Akmani Legian is a 4-star hotel with a modern-minimalist chic design with a blend of natural elements. It is strategically located within the many boutique shopping and eateries in Bali's most favorite area, Jalan Legian. Each room at Hotel Akmani Legian is equipped with air conditioning and a flat screen TV, each room combines modern furnishings with traditional Balinese designs. Hotel Akmani Legian is a 5-minute walk from Kuta Beach and Ground Zero Legian and a 15-minute drive to Ngurah Rai International Airport from the hotel which also offers airport shuttle services at an additional cost. Guests can also enjoy amenities such as relaxing massages, working out at the gym or exploring the area with a rental car. For those of you who want to enjoy dishes, you can try Bell Piatto Cafe with a choice of Indonesian, Asian, and western dishes.",
+    facilities: ['Grand Deluxe', 'Poolside Grand Deluxe', 'Suite', 'Dining'],
+    image: 'assets/images/hotel_akmani.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/akmani-legian-deluxe.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/akmani-legian-grand-deluxe.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/akmani-legian-suite-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/akmani-legian-dining.jpg'
+    ],
+    price: 380000,
+    rating: 4.3,
+    location: "Legian, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Hotel+%26+Residences+Riverview+Kuta+-+Bali/@-8.7177791,115.1763729,16z/data=!4m18!1m9!3m8!1s0x0:0x3037c24b5e7fb3cd!2sHotel+%26+Residences+Riverview+Kuta+-+Bali!5m2!4m1!1i2!8m2!3d-8.7177417!4d115.1807615!3m7!1s0x0:0x3037c24b5e7fb3cd!5m2!4m1!1i2!8m2!3d-8.7177417!4d115.1807615?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 20,
+    categoryId: 3,
+    name: "Siesta Legian Hotel",
+    description:
+        "Hotel Siesta Legian is located in the heart of Legian, Kuta and the center point of Bali's famous hustle and bustle, just steps from the famous Kuta & Legian Beach. Our 119 spacious rooms are the answer for those who need a relaxing time after a fun-filled day in Bali.",
+    facilities: [
+      'Meeting Room',
+      'Lobby Lounge',
+      'SPA',
+      'Restaurant',
+      'Swimming Pool'
+    ],
+    image: 'assets/images/hotel_siesta.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-siesta-legian.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/siesta-legian-suite-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/siesta-hotel-legian-family-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/siesta-hotel-superior-room-double.jpg',
+    ],
+    price: 300000,
+    rating: 4.3,
+    location: "Legian, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Siesta+Legian+Hotel/@-8.707295,115.172398,13z/data=!4m8!3m7!1s0x0:0x5753a7459588f3f4!5m2!4m1!1i2!8m2!3d-8.7072955!4d115.1723983?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 21,
+    categoryId: 3,
+    name: "Neo Plus Kuta Legian",
+    description:
+        "Neo Plus Kuta Legian Hotel Surrounded by famous tourist attractions, Hotel NEO + Kuta Legian is the ideal location to start enjoying your holiday in the most famous tourist center as well as the lively nightlife at Jalan Legian, Kuta Beach and Beachwalk Shopping Mall. Hotel Neo Plus Kuta Legian is located only 15 minutes from Ngurah Rai International Airport, Hotel Neo Plus Kuta Legian offers 117 guest rooms on 6 floors with the best service from Hotel Neo Plus Kuta.For your business needs, NEO + Kuta Legian is equipped with 1 stylish meeting room that can accommodate up to 84 guests in a theater style conference with ample parking space. The meeting rooms are air-conditioned and equipped with a sound system, whiteboard, projector and LCD screen, plus high-speed Wi-fi internet access.",
+    facilities: ['Meeting Room', 'Noodles Now', 'SPA', 'Swimming Pool'],
+    image: 'assets/images/hotel_neo_plus.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-neo-plus-kuta.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/neoplus-kuta-standard-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/neoplus-kuta-legian-superior-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/neoplus-kuta-legian-deluxe-roo0m.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/neo-plus-kuta-legian-suite-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/neo-plus-kuta-noodle-now.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/neo-plus-kuta-care-spa.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/neo-plus-kuta-meeting-room.jpg',
+    ],
+    price: 390000,
+    rating: 4.3,
+    location: "Legian, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Hotel+NEO%2B+Kuta+Legian/@-8.717536,115.175631,13z/data=!4m8!3m7!1s0x0:0x59b1dfaedf2b0a2f!5m2!4m1!1i2!8m2!3d-8.7175356!4d115.1756307?hl=en-US",
+    isFavorite: 1,
+    isPopular: 1,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 22,
+    categoryId: 3,
+    name: "Ramada Encore",
+    description:
+        "Ramada Encore Seminyak Bali is a 4 star hotel, built on approximately 10,000 sqm of land with 2,200 sqm of lagoon pool, located in the trendy Seminyak area, a popular area for all travelers who have charm and a busy lifestyle. Located in a peaceful location but still very close to modern entertainment venues. It only takes you 5 minutes to reach Seminyak Square, the main center for the best exotic attractions in Bali. Our free shuttle service can take you to several popular destinations around the Kuta-Seminyak area. Ramada Encore Bali Seminyak is the ideal choice for both leisure and business.",
+    facilities: [
+      'The Lagoon Pool',
+      'Mahadewi Restaurant',
+      'The Lagoon Bar',
+      'Mahadvi Spa',
+      'The Peak Wine Cellar',
+      'Arjuna Meeting Room',
+      'Gym'
+    ],
+    image: 'assets/images/hotel_ramada_encore.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/rama-encore-superior.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ramada-encore-deluxe-pool-view.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ramada-encore-executive-deluxe.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ramada-encore-deluxe-pool-access.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ramada-encore-family-pool-view.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ramada-encore-family-pool-accesss.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ramada-encore-seminyak-resto.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ramada-encore-the-lagoon-bar.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/ramada-encore-spa.jpg',
+    ],
+    price: 450000,
+    rating: 4.3,
+    location: "Seminyak, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Ramada+Encore+by+Wyndham+Seminyak+Bali/@-8.6854918,115.106113,13z/data=!4m9!1m2!2m1!1sramada+encore!3m5!1s0x2dd225d30df5efb1:0xa68eb71c1a7af0d7!5m2!4m1!1i2!15sCg1yYW1hZGEgZW5jb3JlIgOIAQFaDyINcmFtYWRhIGVuY29yZZIBBWhvdGVs?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 23,
+    categoryId: 3,
+    name: "Harris Hotel Seminyak",
+    description:
+        "Harris Seminyak Bali Hotel is very strategically located within a 5-minute drive from one of the beaches, namely Dhyana Pura. It has a bright decor that offers a comfortable stay with complete facilities such as an outdoor swimming pool and Wi-Fi access at every corner. are hotels. The rooms are brightly decorated in a contemporary and modern style. Each room is equipped with a flat screen television, a safe and air conditioning, a small bar, an electric kettle, a private bathroom equipped with a hairdryer shower, and free toiletries. You can also enjoy the swimming pool while relaxing enjoying the massage and spa services and the wellness center or working out in the gym. Hotel Harris Seminyak also offers a variety of delicious Indonesian, western dishes while for those of you who want to enjoy Italian-style dishes you can try at Harrissimo while enjoying a fresh drink. Hotel Harris Seminyak's receptionist works 24 hours a day who will provide friendly services that can assist you at any time such as airport shuttle facilities at an additional cost. Facilities on offer include a concierge, meeting rooms and a business center. There is also a play area for your children.",
+    facilities: [
+      'Dining',
+      'Harris Cafe',
+      'Juice Bar',
+      'Harrisimo Pizza & Pasta',
+      'Fun & Leisure',
+      'Swimming Pool',
+      'Gym',
+      'SPA',
+      'Botique'
+    ],
+    image: 'assets/images/hotel_harris_seminyak.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-harris-seminyak-pool.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/harris-seminyak-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/harris-seminyak-unique-room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-harris-seminyak-dining.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/cafe-harris-seminyak.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/harris-seminyak-juice-bar.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/Harris-Seminyak-Meeting-Room.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-harris-seminyak-leisure.jpg',
+    ],
+    price: 450000,
+    rating: 4.3,
+    location: "Seminyak, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/HARRIS+Hotel+Seminyak+-+Bali/@-8.6895168,115.1593244,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd2471f48d23ac9:0x309a8be16695e17b!5m2!4m1!1i2!8m2!3d-8.6895168!4d115.1638091",
+    isFavorite: 0,
+    isPopular: 1,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 24,
+    categoryId: 3,
+    name: "Bedrock Hotel",
+    description:
+        "Hotel Bedrock Kuta presents a hotel with a contemporary Balinese style with a luxurious atmosphere ranging from furnishings and design. By providing comfort to every guest who stays. Hotel Bedrock Kuta is a 15-minute walk from famous tourist attractions such as Waterbom, a 5-minute drive from Ngurah Rai International Airport. If you want to visit the beach and also the nearest mall like Lippo Mall Kuta you can reach it only takes 5 minutes.",
+    facilities: [
+      'Superior',
+      'Deluxe',
+      'Grand Deluxe',
+      'Junior Suite',
+      'Luxury Suite',
+      'Family Suite'
+    ],
+    image: 'assets/images/hotel_bedrock.jpg',
+    imagesPreview: [
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/hotel-bedrock-kuta-bali.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/bedrock-hotel-kuta-bali-superior.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/bedrock-hotel-deluxe.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/grand-deluxe-bedrock.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/bedrock-kuta-grand-deluxe.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/bedrock-hotel-luxury-suite.jpg',
+      'https://www.baligetaway.co.id/wp-content/uploads/2014/10/room-family-suite.jpg',
+    ],
+    price: 375000,
+    rating: 4.3,
+    location: "Kuta, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Bedrock+Hotel+Kuta+bali/@-8.737352,115.166515,13z/data=!4m8!3m7!1s0x0:0x81e57804f978a66d!5m2!4m1!1i2!8m2!3d-8.7373799!4d115.1665076?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
   ),
 ];

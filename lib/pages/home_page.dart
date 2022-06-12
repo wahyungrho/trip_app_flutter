@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   PageController? _pageController;
   CategoryModel? categoryModel = CategoryModel();
-  int activePage = 0, selectedCategory = 0;
+  int activePage = 0, selectedCategory = 0, isFavorite = 0;
   List banners = [
     {
       'image': 'assets/images/img_banner_2.png',
@@ -23,11 +23,37 @@ class _HomePageState extends State<HomePage> {
       'subtitle': 'Indonesia',
     },
   ];
+  List<ProductModel> listProductHome = [];
+  List<CategoryModel> listCategoryNameWhereSelected = [];
+  bool isLoadingPage = false;
+
+  Future<void> initialLoadPage() async {
+    setState(() {
+      isLoadingPage = true;
+    });
+
+    Future.delayed(const Duration(milliseconds: 1000), () {
+      setState(() {
+        isLoadingPage = false;
+        listProductHome = listProduct;
+      });
+    });
+  }
+
+  void goToDetailPage(ProductModel productModel) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => DetailProductPage(
+                  productModel: productModel,
+                )));
+  }
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController(initialPage: activePage);
+    initialLoadPage();
   }
 
   @override
@@ -207,80 +233,200 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
+    Widget categoryWidget() {
+      return Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: AppConfig.defaultMargin,
+            vertical: AppConfig.defaultMargin),
+        child:
+            // category
+            Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const TextTitleWidget("Category"),
+            const SizedBox(
+              height: 10,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  for (var i = 0; i < listCategory.length; i++)
+                    Container(
+                      margin: EdgeInsets.only(
+                          right: (i == listCategory.length - 1) ? 0 : 5),
+                      child: CategoryWidget(
+                        listCategory[i].image!,
+                        nameCategory: listCategory[i].name,
+                        selected: (selectedCategory == listCategory[i].id)
+                            ? true
+                            : false,
+                        onTap: () {
+                          setState(() {
+                            selectedCategory = listCategory[i].id!;
+                            listCategoryNameWhereSelected = listCategory
+                                .where(
+                                    (element) => element.id == selectedCategory)
+                                .toList();
+                          });
+                        },
+                      ),
+                    )
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-          body: SafeArea(
-        child: Column(
-          children: [
-            SizedBox(height: AppConfig.defaultMargin - 8),
-            headerWidget(),
-            SizedBox(height: AppConfig.defaultMargin - 10),
-            Expanded(
-                child: ListView(
-              children: [
-                SizedBox(height: AppConfig.defaultMargin - 10),
-                searchWidget(),
-                SizedBox(
-                  height: AppConfig.defaultMargin - 10,
-                ),
-                bannerWidget(),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: AppConfig.defaultMargin,
-                      vertical: AppConfig.defaultMargin),
-                  child:
-                      // category
-                      Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+          body: (isLoadingPage)
+              ? const Center(
+                  child: CircularProgressIndicator(),
+                )
+              : SafeArea(
+                  child: Column(
                     children: [
-                      Text(
-                        "Category",
-                        style: AppConfig.titleFontStyle
-                            .copyWith(fontWeight: FontWeight.w500),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            for (var i = 0; i < listCategory.length; i++)
-                              Container(
-                                margin: EdgeInsets.only(
-                                    right:
-                                        (i == listCategory.length - 1) ? 0 : 5),
-                                child: CategoryWidget(
-                                  listCategory[i].image!,
-                                  nameCategory: listCategory[i].name,
-                                  selected:
-                                      (selectedCategory == listCategory[i].id)
-                                          ? true
-                                          : false,
-                                  onTap: () {
-                                    setState(() {
-                                      selectedCategory = listCategory[i].id!;
-                                    });
-                                    if (kDebugMode) {
-                                      print(selectedCategory);
-                                    }
-                                  },
+                      SizedBox(height: AppConfig.defaultMargin - 8),
+                      headerWidget(),
+                      SizedBox(height: AppConfig.defaultMargin - 10),
+                      Expanded(
+                          child: ListView(
+                        children: [
+                          SizedBox(height: AppConfig.defaultMargin - 10),
+                          searchWidget(),
+                          SizedBox(
+                            height: AppConfig.defaultMargin - 10,
+                          ),
+                          bannerWidget(),
+                          categoryWidget(),
+                          Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: AppConfig.defaultMargin),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    TextTitleWidget((selectedCategory == 0)
+                                        ? "Popular Place"
+                                        : listCategoryNameWhereSelected[0]
+                                            .name!),
+                                    InkWell(
+                                      borderRadius: BorderRadius.circular(
+                                          AppConfig.cardBorderRadius),
+                                      onTap: () {},
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            "See More",
+                                            style: AppConfig.subTitleFontStyle
+                                                .copyWith(
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                          ),
+                                          const SizedBox(
+                                            width: 3,
+                                          ),
+                                          const Icon(
+                                            Icons.arrow_forward_ios_outlined,
+                                            size: 12,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              )
-                          ],
-                        ),
-                      )
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Center(
+                                  child: Wrap(
+                                      spacing: 5,
+                                      runSpacing: 5,
+                                      children: (selectedCategory != 0)
+                                          ? listProductHome
+                                              .where((element) =>
+                                                  element.categoryId ==
+                                                  selectedCategory)
+                                              .map((e) => InkWell(
+                                                    borderRadius: BorderRadius
+                                                        .circular(AppConfig
+                                                            .cardBorderRadius),
+                                                    onTap: () {
+                                                      goToDetailPage(e);
+                                                    },
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              3.0),
+                                                      child: CardProductWidget(
+                                                        imageAssets: e.image,
+                                                        productModel: e,
+                                                        isFavorit: () {
+                                                          setState(() {
+                                                            (e.isFavorite == 1)
+                                                                ? e.isFavorite =
+                                                                    0
+                                                                : e.isFavorite =
+                                                                    1;
+                                                          });
+                                                        },
+                                                      ),
+                                                    ),
+                                                  ))
+                                              .take(6)
+                                              .toList()
+                                          : listProductHome
+                                              .where((element) =>
+                                                  element.isPopular == 1)
+                                              .map((e) => InkWell(
+                                                    borderRadius: BorderRadius
+                                                        .circular(AppConfig
+                                                            .cardBorderRadius),
+                                                    onTap: () {
+                                                      goToDetailPage(e);
+                                                    },
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              3.0),
+                                                      child: CardProductWidget(
+                                                        imageAssets: e.image,
+                                                        productModel: e,
+                                                        isFavorit: () {
+                                                          setState(() {
+                                                            (e.isFavorite == 1)
+                                                                ? e.isFavorite =
+                                                                    0
+                                                                : e.isFavorite =
+                                                                    1;
+                                                          });
+                                                        },
+                                                      ),
+                                                    ),
+                                                  ))
+                                              .toList()),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: AppConfig.defaultMargin,
+                          )
+                        ],
+                      ))
                     ],
                   ),
-                )
-              ],
-            ))
-          ],
-        ),
-      )),
+                )),
     );
   }
 }
