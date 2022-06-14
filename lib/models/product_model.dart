@@ -668,4 +668,189 @@ List<ProductModel> listProduct = [
     isPopular: 0,
     isReservation: 1,
   ),
+  ProductModel(
+    id: 25,
+    categoryId: 4,
+    name: "Prime Plus Medical",
+    description:
+        "Prime Plus Medical is a stand-alone medical facility dedicated to providing excellent medical services for locals, expatriates and tourists in the heart of the coastal area of Canggu, Bali. Our 24-hour walk-in facility accommodates to the high demand for the wide range of medical services that can be provided by urgent care centers.",
+    facilities: [
+      "24/7 On-Call",
+      "IV Vitamin Theraphy",
+      "Dental Clinic",
+      "Medical Laboratory",
+      "Vaccination",
+      "Emergency Treatment"
+    ],
+    image: "assets/images/prime_medical.png",
+    imagesPreview: [
+      "https://www.primeplusmed.com/wp-content/uploads/2019/03/prime-plus-3-14.jpg",
+      "https://www.primeplusmed.com/wp-content/uploads/2018/11/prime-plus-medical-smile.jpg",
+      "https://www.primeplusmed.com/wp-content/uploads/2019/03/prime-plus-3-12.jpg",
+      "https://www.primeplusmed.com/wp-content/uploads/2019/03/prime-plus-3-3-copy.jpg"
+    ],
+    price: 0,
+    rating: 4.8,
+    location: "Canggu, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Prime+Plus+Medical/@-8.6676497,115.1432501,17.66z/data=!4m5!3m4!1s0x2dd24776cfc15f71:0x850f2033ba09bdde!8m2!3d-8.6680402!4d115.1466911?hl=en-US",
+    isFavorite: 0,
+    isPopular: 1,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 26,
+    categoryId: 4,
+    name: "RSUP Sanglah",
+    description:
+        "Central General Hospital (RSUP) Sanglah Denpasar is a type A hospital belonging to the Ministry of Health located in Bali. As a referral hospital for Bali and Nusa Tenggara, Sanglah Hospital Denpasar always prioritizes quality and patient safety",
+    facilities: [
+      'Medical Room',
+      "Emergency room",
+      "Haemodialisa",
+      "Radiotherapy"
+    ],
+    image: "assets/images/rsup_sanglah.jpg",
+    imagesPreview: [
+      "https://i1.wp.com/sanglahhospitalbali.com/home/wp-content/uploads/2021/08/poliklinik-1.jpg",
+      "https://i1.wp.com/sanglahhospitalbali.com/home/wp-content/uploads/2021/08/WING-AMERTA-SIANG-HARI.jpg",
+      "https://i2.wp.com/sanglahhospitalbali.com/home/wp-content/uploads/2021/08/triage.jpg",
+      "https://i0.wp.com/sanglahhospitalbali.com/home/wp-content/uploads/2021/08/pjt.jpg",
+      "https://i1.wp.com/sanglahhospitalbali.com/home/wp-content/uploads/2021/12/LINAC-1.jpg"
+    ],
+    price: 0,
+    rating: 4.0,
+    location: "Denpasar, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Rumah+Sakit+Umum+Pusat+Sanglah/@-8.6694169,115.2221051,14z/data=!4m5!3m4!1s0x0:0x842c9d89a4a920dd!8m2!3d-8.6758359!4d115.2127549",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 27,
+    categoryId: 4,
+    name: "ZAP Clinic",
+    description:
+        "Founded in 2009, ZAP always strives to continue to achieve 100% customer satisfaction (internal or external) this will be reflected in our service spirit which will continue to be committed to being a solution for the community. ZAP will periodically continue to innovate, improve quality and ensure punctuality in each service session provided. We show real appreciation for our clients, who are always trying to balance their daily lives. We strive to make sure the ZAP experience feels friendly yet professional. We love innovation and technology, but continue to prioritize safe and high standards of action at every outlet, every time even for the long term.We so value time which is the most precious value in life, that we make sure all our treatments are started and done on time.",
+    facilities: ['Body Treatment', 'Beauty Treatment'],
+    image: "assets/images/clinic_zap.png",
+    imagesPreview: [
+      'https://zapclinic.com/assets/media/services/photofacial/pf-step-4.jpg',
+      'https://zapclinic.com/assets/media/services/photofacial/pf-step-1.jpg',
+    ],
+    price: 0,
+    rating: 4.5,
+    location: "Kuta, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/ZAP+Clinic+-+Bali/@-8.7021661,115.1755314,208m/data=!3m2!1e3!4b1!4m5!3m4!1s0x2dd246cf861c8ec1:0xaddbc0dc4aa8e564!8m2!3d-8.7021622!4d115.1760703",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 28,
+    categoryId: 4,
+    name: "Clinic SOS Gatotkaca",
+    description:
+        "The SOS Gatotkaca Primary Clinic in Denpasar City was founded in 1991 by Prof. Dr. dr. Ketut Sukardika, SpMK as the first clinic in Bali that operates 24 hours with the mission of providing help to others in need",
+    facilities: [
+      'Intensive Care Unit',
+      'Outpatient Installation',
+      'Diagnostic Support Installation',
+      'Medical Check-up'
+    ],
+    image: "assets/images/sos_gatotkaca.jpeg",
+    imagesPreview: [
+      "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2021/05/05/7b2ce5cc-5c19-4818-bec7-7db876c5ac8d-1620195635095-467c6af328588859d8829ca23398f6c0.jpg",
+      "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit621414gsm/events/2021/05/05/57e82df2-ab00-45f4-b5d0-397ec2664042-1620195628561-d490ce103487871eba805155b588cf36.jpg"
+    ],
+    price: 0,
+    rating: 4.5,
+    location: "Denpasar, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Klinik+SOS+Gatotkaca/@-8.6530069,115.2142398,833m/data=!3m1!1e3!4m5!3m4!1s0x2dd2409efc24467f:0x58fdc75fe8feb1a3!8m2!3d-8.6530069!4d115.2161105",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 29,
+    categoryId: 4,
+    name: "RS BIMC Nusa Dua",
+    description:
+        "BIMC Nusa Dua Hospital is one of the hospitals located in the South Kuta area, Badung. This hospital has been established since 2012 under the auspices of Siloam Hospitals Group. Siloam Hospitals has a vision to create a hospital with international services, affordable for the community, and under the love of God. With a mission to be the hospital of choice with world-class healthcare services in health education and research.",
+    facilities: [
+      'Medical Check-up',
+      'Neonate Intensive Care Unit (NICU)',
+      'CosMedic Centre',
+      'Arthroscopy Centre'
+    ],
+    image: "assets/images/rs_bimc.jpeg",
+    imagesPreview: [
+      'https://d1ojs48v3n42tp.cloudfront.net/provider_location_banner/268571_20-4-2020_18-31-39.jpeg',
+      'https://bimcbali.com/wp-content/uploads/2019/02/Rumah-Sakit-Bali-BIMC-Siloam-Hospital-Nusa-Dua-Profile-Poliklinik-Spesialis.jpg',
+      'https://bimcbali.com/wp-content/uploads/2019/02/rumah-sakit-bali-bimc-siloam-nusa-dua-klinik-nyeri.jpg'
+    ],
+    price: 0,
+    rating: 4.5,
+    location: "Nusa Dua, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/BIMC+Hospital+Nusa+Dua/@-8.7993745,115.2262724,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd24325b8592b69:0xde6d432ae4d18887!8m2!3d-8.7993745!4d115.2284611",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 30,
+    categoryId: 4,
+    name: "The Medical Bali Canggu",
+    description:
+        "The Medical Bali is an integrated and trusted company engaged in health services. The Medical Bali is always committed to providing the best in class health services and products in accordance with our motto, \"Serve You Better\". Our medical team has the competence and qualifications as company doctors who have a HIPERKES (Company Hygyene and Occupational Health) certificate.",
+    facilities: ['Medical Check-up', 'Home Care', 'Laboratory'],
+    image: "assets/images/medical_bali_canggu.jpeg",
+    imagesPreview: [
+      'https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7580401531975/The%2520Medical%2520Bali%2520%2528Canggu%2529-a4f39241-4629-4364-8b17-524efabc57b7.jpeg',
+      'https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7580401531975/The%2520Medical%2520Bali%2520%2528Canggu%2529-ba1bff4b-95ba-4781-8baa-4ef6ca25ddf9.jpeg',
+      'https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7580401531975/The%2520Medical%2520Bali%2520%2528Canggu%2529-2fbbb03a-b698-4cbd-9cea-916a8959434e.jpeg'
+    ],
+    price: 0,
+    rating: 4.9,
+    location: "Canggu, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/THE+MEDICAL+CANGGU+BATU+BOLONG+(Doctor,+Tes+Antigen+%26+PCR)/@-8.6456083,115.1388487,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd239c39bdda777:0x6a194531300470b7!8m2!3d-8.6456083!4d115.1410374",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 1,
+  ),
+  ProductModel(
+    id: 31,
+    categoryId: 4,
+    name: "RSD Magusada",
+    description:
+        "RSD Mangusada, Badung Regency is a clinic with: the name of the Dharma Asih Clinic managed by the Hindu Rsi . Foundation Markandeya. In September 1998 it was then taken over by Badung Regency Government and changed its name to Klinik The birth of ura Dharma Asih was then carried out to expand the area and construction of the hospital building from 1999 to the present. On April 30, 2002, the District Regulation was issued Badung Number 3 of 2002 concerning the Establishment of Organizational Structure and the Work Procedure of the Badung Regency General Hospital. Giving health services to the community, can only be implemented in August 22, 2002 by accepting patients covering the types of services Emergency Unit and some basic polyclinics such as Internal Medicine, Surgery, Pediatrics, Obstetrics & Gynecology and Dental & Oral. On the 4th September 2002 Badung Hospital was officially opened by the Regent A.A. Oka Ratmadi, SH with the types of services provided, namely ER, Nursing Outpatient and Inpatient with a capacity of 25 beds.",
+    facilities: [
+      'Hemodialysis Unit',
+      'Endoscopy',
+      'Trauma Center',
+      'Cath Lab',
+      'Disaster Team',
+    ],
+    image: "assets/images/rsd_mangusada.jpg",
+    imagesPreview: [
+      'https://rsudmangusada.badungkab.go.id/uploads/fasilitas/fasilitas_202101110155_PoliklinikReguler.JPG',
+      'https://rsudmangusada.badungkab.go.id/assets/CKImages/images/RAWATINAP.jpg',
+      'https://rsudmangusada.badungkab.go.id/uploads/fasilitas/fasilitas_202101110156_PoliklinikEksekutif.jpg',
+      'https://rsudmangusada.badungkab.go.id/assets/CKImages/images/IMG_4529.JPG',
+      'https://rsudmangusada.badungkab.go.id/assets/CKImages/images/IMG_3303.JPG'
+    ],
+    price: 0,
+    rating: 4.9,
+    location: "Badung, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Rumah+Sakit+Mangusada+Badung/@-8.5786598,115.1461377,12z/data=!4m5!3m4!1s0x2dd23bfdb9811107:0xa81c5fa8cbb11519!8m2!3d-8.5786598!4d115.1829684",
+    isFavorite: 1,
+    isPopular: 1,
+    isReservation: 1,
+  )
 ];
