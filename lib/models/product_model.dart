@@ -852,5 +852,249 @@ List<ProductModel> listProduct = [
     isFavorite: 1,
     isPopular: 1,
     isReservation: 1,
+  ),
+  ProductModel(
+    id: 32,
+    categoryId: 5,
+    name: "Chicken Betutu Men Tempeh",
+    description:
+        "One of the recommendations for culinary places that serve Balinese specialties that are globally popular is Ayam Betutu Men Tempeh, which has been established since 1978. Located in the vicinity of the old Gilimanuk terminal, this legendary restaurant offers two types of chicken betutu dishes, namely fried and wet-cooked chicken betutu. Both of them will definitely be able to shake your tongue because they are made from young free-range chicken with an authentic Balinese culinary taste. The price of the betutu chicken package in this place is Rp. 60.000.",
+    facilities: ['Chicken Betutu', 'Hot Tea', 'Ice Tea', 'Orange Juice'],
+    price: 60000,
+    image: "assets/images/ayam_betutu.jpg",
+    imagesPreview: [
+      'https://b.zmtcdn.com/data/reviews_photos/41c/f137ed98043d58e8b9f8d7d4aa9cb41c_1546413590.jpg',
+      'https://b.zmtcdn.com/data/pictures/4/1703494/269de224ec9e321bf2a1ed21f4c31358.png',
+      'https://b.zmtcdn.com/data/reviews_photos/a3f/839761d21affca7a2b7dd73f7350da3f_1450958806.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/96c/0fc3da275de9aa92a161df4ce964996c_1546413575.jpg'
+    ],
+    rating: 4.5,
+    location: "Gilimanuk, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Ayam+Betutu+Men+Tempeh+sejak+1978/@-8.1584955,114.4173543,15z/data=!4m5!3m4!1s0x2dd14385c304a40b:0xfbd0199464b60d20!8m2!3d-8.168164!4d114.4361211",
+    isFavorite: 0,
+    isPopular: 1,
+    isReservation: 0,
+  ),
+  ProductModel(
+    id: 33,
+    categoryId: 5,
+    name: "Menega Cafe",
+    description:
+        "Want to have dinner while enjoying the beautiful sunset by the beach? Make your choice to Menega Café. The reason is, this place offers a comfortable place for your nightly Balinese culinary tour on the Jimbaran beach The menu offered is in the form of seafood cooked while still fresh with special spices that are certainly appetizing. If you want to save more, you can choose the package offered for Rp. 200.000 per person with a complete menu. Want a bigger portion? The two packages from this restaurant are priced at Rp. 750.000.",
+    facilities: ['Cold Beverage', 'Hot Beverage', 'Soft Drink', 'Fresh Juice'],
+    price: 80000,
+    image: "assets/images/mange_cafe.jpg",
+    imagesPreview: [
+      'https://b.zmtcdn.com/data/reviews_photos/01e/5ae5d6bb58c3cc13e67070293606b01e_1529224255.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/f72/c5bec17ae956d536ee4b69b58453ef72_1422444710.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/136/53a89862dbebc8f838d6bb44c0023136_1530960367.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/01e/5ae5d6bb58c3cc13e67070293606b01e_1529224255.jpg'
+    ],
+    location: "jimbaran, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Menega+Cafe/@-8.7806688,115.1621705,17z/data=!4m14!1m8!3m7!1s0x2dd244f3501c9553:0x74c847860f37ca9!2sMenega+Cafe!8m2!3d-8.7807808!4d115.1645358!14m1!1BCgIgAQ!3m4!1s0x2dd244f3501c9553:0x74c847860f37ca9!8m2!3d-8.7807808!4d115.1645358",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 0,
+  ),
+  ProductModel(
+    id: 34,
+    categoryId: 5,
+    name: "Warung Wardani",
+    description:
+        "This one place to eat has a mainstay menu in the form of Chicken and Beef Mixed Rice which is savory and delicious. In addition to the menu, Warung Wardani also offers a variety of other Indonesian culinary delights such as gado-gado, grilled rice, rawon and so on.Make sure you follow every update on this restaurant's Instagram because there are lots of discounts and other interesting offers that you can take advantage of. You can invite the whole family to enjoy a meal here because the menu offered is not too spicy so children can enjoy it too.",
+    facilities: [
+      'Chicken and Beef Mixed Rice',
+      'Indonesian Culinary',
+      'Grilled Rice',
+      'Rawon'
+    ],
+    price: 40000,
+    image: "assets/images/warung_wardani.jpg",
+    imagesPreview: [
+      'https://lh5.googleusercontent.com/p/AF1QipMso1zVJUgbPApDjVDUZlEDRgah33jBo91Xq3dH',
+      'https://lh5.googleusercontent.com/p/AF1QipNm7jSRFt00Bz5aVedRynY9BeuB28JpQBLMq5N3',
+      'https://lh5.googleusercontent.com/p/AF1QipP4Xvt0NgCzCOJaPED6AK9qezAaghKtIOZ1jjVE',
+      'https://lh5.googleusercontent.com/p/AF1QipPipBPYDhVf5L-8cE_69hJNB3vomhGM_tzuM91E'
+    ],
+    rating: 4.5,
+    location: "Denpasar, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Warung+Wardani/@-8.6510946,115.2136952,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x2dd2409e358fde2f:0xea7f870663495047!2sWarung+Wardani!8m2!3d-8.6510946!4d115.2158839!3m4!1s0x2dd2409e358fde2f:0xea7f870663495047!8m2!3d-8.6510946!4d115.2158839",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 0,
+  ),
+  ProductModel(
+    id: 35,
+    categoryId: 5,
+    name: "Nasi Pecel Bu Tinuk",
+    description:
+        "The mainstay menu of this restaurant which has a halal certificate from MUI is the famous delicious pecel rice finished with thick and savory peanut sauce. In addition, there are also other delicious menus, including oxtail soup, rawon and fried duck. You can enjoy pecel rice with a variety of delicious side dishes such as fried lungs, empal, tempe bacem, fried chicken and others. This place is always crowded with shoppers, especially at meal times, so you should look for the best time when you want to visit this place.",
+    facilities: ['Oxtail Soup', 'Rawon', 'Fried Duck'],
+    price: 25000,
+    image: "assets/images/pecel_bu_tinuk.jpg",
+    imagesPreview: [
+      'https://b.zmtcdn.com/data/reviews_photos/7c2/35e21437d0497f2c78e5e1ef8bf2b7c2_1530963560.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/369/61a7e9936bf538c7bca3967ddd3f8369_1440922003.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/b1c/15dede487f9eab4efdf243c5ce20eb1c_1480047021.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/6c5/07c721f8ed4a894bf884f9cf84e0c6c5_1440922005.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/a28/0cb9ef742a50084cf593f8c3916e6a28_1546133502.jpg'
+    ],
+    rating: 4.2,
+    location: 'Kuta, Bali',
+    urlLocation:
+        "https://www.google.com/maps/place/Nasi+Pecel+Bu+Tinuk/@-8.7332143,115.1755585,17z/data=!3m1!4b1!4m14!1m8!3m7!1s0x2dd24404ecad42a5:0x436f48b9fb500583!2sNasi+Pecel+Bu+Tinuk!8m2!3d-8.7332509!4d115.1777482!14m1!1BCgIYIQ!3m4!1s0x2dd24404ecad42a5:0x436f48b9fb500583!8m2!3d-8.7332509!4d115.1777482",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 0,
+  ),
+  ProductModel(
+    id: 36,
+    categoryId: 5,
+    name: "Bebek Bengil Nusa Dua",
+    description:
+        "The culinary recommendation of Bali Nusa Dua, which is famous for its Bebek Bengil mainstay or who is more popular with the name Dirty Duck Dinner, because the word bengil itself means dirty. The mainstay menu is the savory and delicious fried duck served with 3 special kinds of chili sauce, namely fried chili sauce, matah, red chili sauce and lawar. The estimated price for eating at this restaurant is around Rp 100.000 per head.",
+    facilities: [
+      'Rice Paper Rolls',
+      'Duck Spring Roll',
+      'Grilled Thai Chicken Wings'
+    ],
+    price: 100000,
+    image: "assets/images/bebek_bengil.jpg",
+    imagesPreview: [
+      'https://b.zmtcdn.com/data/reviews_photos/fda/b163e9a78df1e5e5c46ed09b58bc2fda_1485492401.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/af1/336bad8debdd7361c5b299ed340abaf1_1548114276.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/3c2/6689213147fc274b1311cb7fd77123c2_1471628948.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/46c/f7635de2630810f496fd08a0a0e6e46c_1455696315.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/2da/f160c35f0c4eea24f0239fae7e16f2da_1517116848.jpg',
+      'https://b.zmtcdn.com/data/reviews_photos/965/2f35b855e3c5dc61be19340fe64f9965_1464220248.jpg'
+    ],
+    rating: 4.3,
+    location: 'Nusa Dua, Bali',
+    urlLocation:
+        "https://www.google.com/maps/place/Bebek+Bengil/@-8.801565,115.2311087,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd2432818279391:0x37ba48b3cbb94b35!8m2!3d-8.801565!4d115.2355934",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 0,
+  ),
+  ProductModel(
+    id: 37,
+    categoryId: 5,
+    name: "Made's Warung Seminyak",
+    description:
+        "Made’s Warung was established in 1969 and has become a social eating and meeting venue for locals, expats and tourists alike. It has grown from a traditional roadside warung into a cosmopolitan restaurant serving a variety of local and international food in Bali.",
+    facilities: [
+      'Appetizer',
+      'Sandwich',
+      'Drink',
+      'Salad',
+      'Balinese Food',
+      'Indonesian Food'
+    ],
+    image: "assets/images/made_bali_seminyak.jpg",
+    imagesPreview: [
+      'https://madeswarung.com/wp-content/uploads/2022/03/Crowded-salsa-at-friday-night-scaled.jpg',
+      'https://madeswarung.com/wp-content/uploads/2022/02/Salsa-Edit-3-scaled.jpg',
+      'https://madeswarung.com/wp-content/uploads/2022/03/IMG_7306.jpg',
+      'https://madeswarung.com/wp-content/uploads/2022/03/IMG_5838.jpg'
+    ],
+    price: 100000,
+    rating: 4.3,
+    location: "Seminyak, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Made's+Warung/@-8.6894097,115.1655635,17z/data=!3m1!4b1!4m14!1m8!3m7!1s0x2dd247219ae78919:0xdfdeb1e4339ec6b1!2sMade's+Warung!8m2!3d-8.6894157!4d115.1677114!14m1!1BCgIYIQ!3m4!1s0x2dd247219ae78919:0xdfdeb1e4339ec6b1!8m2!3d-8.6894157!4d115.1677114?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 0,
+  ),
+  ProductModel(
+    id: 38,
+    categoryId: 5,
+    name: "Bebek Tepi Sawah",
+    description:
+        "Enjoy a wide selection of cuisines, ranging from contemporary western cuisine and innovative Indonesian or Balinese specialties in a fresh setting in a true Balinese Village environment. Sharing joy and satisfaction with others, enjoying the wonderful experience of eating in the corner of the rice fields, while looking at the rice fields and the pounding of coconut leaves, and listening to various small birds chirping.",
+    facilities: [
+      'Grilled Mixed Seafood',
+      'Shrimp Avocado Salad',
+      'Chicken Sweet Corn Soup',
+      'Tropical Vegetarian'
+    ],
+    price: 100000,
+    image: "assets/images/bebek_tepi_sawah.jpg",
+    imagesPreview: [
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah10.jpg',
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah1.jpg',
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah7.jpg',
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah11.jpg',
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah15.jpg',
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah13.jpg',
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah19.jpg',
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah3.jpg',
+      'http://www.bebektepisawahrestaurant.com/gallery/bebektepisawah5.jpg'
+    ],
+    rating: 4.6,
+    location: "Ubud, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Bebek+Tepi+Sawah+Restaurant+Ubud/@-8.523635,115.272846,13z/data=!4m5!3m4!1s0x0:0x4bb1b97df4b56821!8m2!3d-8.5236352!4d115.2728463?hl=en-US",
+    isFavorite: 1,
+    isPopular: 1,
+    isReservation: 0,
+  ),
+  ProductModel(
+    id: 39,
+    categoryId: 5,
+    name: "Genius Cafe Sanur",
+    description:
+        "Genius Drinks are designed using fresh ingredients, superfoods and essential oils, mixed with herbal tonics and house-infused alcohols. With Genius Drinks, we stay wholesome and prove that it is possible to have a good social life and cultivate health at the same time. We are reinventing bar culture by making a positive change and impact on the way we drink. We are proud to use only locally-grown herbs - our natural healers on this planet. Incredible Indonesian herbs have many different properties and, when infused into alcohol, they create something new and almost magical… It is a process that brings a whole new approach to what we drink, the way we drink and why we drink.",
+    facilities: [
+      'Chicken Burger',
+      'Falafel Wrap',
+      'Happiness Bowl',
+      'Tropical Fruit Platter',
+      'Etc'
+    ],
+    image: "assets/images/genius_cafe.jpg",
+    imagesPreview: [
+      'https://geniuscafebali.com/wp-content/uploads/2019/06/genius_tacos-1.jpg',
+      'https://geniuscafebali.com/wp-content/uploads/2019/06/falafel_roll-1.jpg',
+      'https://geniuscafebali.com/wp-content/uploads/2019/06/smoothies-1.jpg',
+      'https://geniuscafebali.com/wp-content/uploads/2019/06/smoothie_bowls-1.jpg',
+      'https://geniuscafebali.com/wp-content/uploads/2019/06/hands_with_pizza-1.jpg'
+    ],
+    price: 100000,
+    rating: 4.5,
+    location: "Sanur, Bali",
+    urlLocation:
+        "https://www.google.com/maps/place/Genius+Cafe+Sanur/@-8.7114749,115.2516104,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x2dd241969c6cccaf:0x32ae374cc34b1dc6!2sGenius+Cafe+Sanur!8m2!3d-8.71147!4d115.2537978!3m4!1s0x2dd241969c6cccaf:0x32ae374cc34b1dc6!8m2!3d-8.71147!4d115.2537978?hl=en-US",
+    isFavorite: 0,
+    isPopular: 1,
+    isReservation: 0,
+  ),
+  ProductModel(
+    id: 40,
+    categoryId: 5,
+    name: "Warung Liku Nasi Bali",
+    description:
+        "If you want to enjoy chicken betutu rice that tastes different from most betutu chickens, try coming to Warung Liku. The shop is located on Jl. Gandapura III has a menu of betutu chicken rice that has a distinctive taste. Hmm..what's the difference between Warung Liku's Nasi Ayam betutu and the others? While most betutu chickens are cooked by boiling and then grilling, at Warung Liku the boiler chicken is roasted for about 30 minutes. After that, just boil it with base genep for 3 hours until it is soft and the spices are absorbed.",
+    facilities: ['Balinese Food', 'Chicken Betutu', 'Etc'],
+    price: 50000,
+    image: "assets/images/warung_liku.jpg",
+    imagesPreview: [
+      'https://media-cdn.tripadvisor.com/media/photo-s/0e/09/fc/41/nasi-campur-bali-porsi.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-s/03/a6/ba/1f/standard-yet-it-s-so.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-s/05/6a/30/e6/warung-liku.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-s/19/d4/50/2e/photo0jpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-s/0f/b4/34/44/photo0jpg.jpg',
+      'https://media-cdn.tripadvisor.com/media/photo-s/0c/59/fc/ef/photo0jpg.jpg',
+    ],
+    rating: 4.6,
+    location: 'Denpasar, Bali',
+    urlLocation:
+        "https://www.google.com/maps/place/Warung+Liku+Nasi+Bali+-+Ayam+Betutu/@-8.674808,115.23015,13z/data=!4m5!3m4!1s0x0:0xd23b84731fcd109f!8m2!3d-8.6748053!4d115.2300641?hl=en-US",
+    isFavorite: 0,
+    isPopular: 0,
+    isReservation: 0,
   )
 ];
