@@ -10,11 +10,11 @@ class DetailProductPage extends StatefulWidget {
 }
 
 class _DetailProductPageState extends State<DetailProductPage> {
-  PageController? _pageController;
+  PageController _pageController = PageController();
 
   @override
   void dispose() {
-    _pageController!.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -72,7 +72,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
             Align(
               alignment: const Alignment(0.9, 0.9),
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.17,
+                width: MediaQuery.of(context).size.width / 4,
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -81,21 +81,24 @@ class _DetailProductPageState extends State<DetailProductPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.star,
-                      size: AppConfig.defaultMargin,
-                      color: Colors.amber,
+                    Expanded(
+                      child: Icon(
+                        Icons.star,
+                        size: AppConfig.defaultMargin - 2,
+                        color: Colors.amber,
+                      ),
                     ),
                     const SizedBox(
-                      width: 3,
+                      width: 5,
                     ),
                     Expanded(
                         child: Text(
                       widget.productModel!.rating!.toString(),
-                      style: TextStyle(
-                          color: Colors.amber,
-                          fontSize: AppConfig.defaultMargin,
-                          fontWeight: FontWeight.w700),
+                      style: const TextStyle(
+                        color: Colors.amber,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
                     )),
                   ],
                 ),
@@ -218,6 +221,94 @@ class _DetailProductPageState extends State<DetailProductPage> {
       );
     }
 
+    Widget photosWidget() {
+      return Padding(
+          padding: EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "Photos",
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              SizedBox(
+                  height: 80,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: widget.productModel!.imagesPreview!.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      final x = widget.productModel!.imagesPreview![index];
+                      return GestureDetector(
+                        onTap: () {
+                          // showDialog(
+                          //     context: context,
+                          //     builder: (context) => AlertDialog(
+                          //           backgroundColor: Colors.white,
+                          //           shape: RoundedRectangleBorder(
+                          //             borderRadius: BorderRadius.circular(
+                          //                 AppConfig.cardBorderRadius),
+                          //           ),
+                          //           title: Text(widget.productModel!.name!,
+                          //               style: AppConfig.titleFontStyle
+                          //                   .copyWith(
+                          //                       color: Colors.black87)),
+                          //           content: ClipRRect(
+                          //               borderRadius: BorderRadius.circular(
+                          //                   AppConfig.cardBorderRadius),
+                          //               child: Image.network(x)),
+                          //         ));
+
+                          _pageController = PageController(initialPage: index);
+
+                          MyHelpers.showDialogFoto(
+                            context,
+                            widget.productModel!.imagesPreview!.length,
+                            title: widget.productModel!.name!,
+                            pageController: _pageController,
+                            listImageNetwork: [
+                              for (var i = 0;
+                                  i <
+                                      widget
+                                          .productModel!.imagesPreview!.length;
+                                  i++)
+                                Image.network(
+                                  widget.productModel!.imagesPreview![i],
+                                  fit: BoxFit.cover,
+                                )
+                            ],
+                          );
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(
+                              right: (index ==
+                                      widget.productModel!.imagesPreview!
+                                              .length -
+                                          1)
+                                  ? 0
+                                  : 8),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                                AppConfig.cardBorderRadius),
+                            child: FadeInImage.assetNetwork(
+                                placeholder: "assets/images/logo_trip.png",
+                                image: x,
+                                height: 80,
+                                width: 100,
+                                fit: BoxFit.cover,
+                                placeholderFit: BoxFit.contain),
+                          ),
+                        ),
+                      );
+                    },
+                  ))
+            ],
+          ));
+    }
+
     return Scaffold(
         body: SingleChildScrollView(
       child: Column(
@@ -238,94 +329,15 @@ class _DetailProductPageState extends State<DetailProductPage> {
           (widget.productModel!.facilities!.isEmpty)
               ? const SizedBox()
               : facilitiesWidget(),
+          (widget.productModel!.facilities!.isEmpty)
+              ? const SizedBox()
+              : SizedBox(
+                  height: AppConfig.defaultMargin,
+                ),
+          photosWidget(),
           SizedBox(
             height: AppConfig.defaultMargin,
           ),
-          Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Photos",
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  SizedBox(
-                      height: 80,
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: widget.productModel!.imagesPreview!.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          final x = widget.productModel!.imagesPreview![index];
-                          return GestureDetector(
-                            onTap: () {
-                              // showDialog(
-                              //     context: context,
-                              //     builder: (context) => AlertDialog(
-                              //           backgroundColor: Colors.white,
-                              //           shape: RoundedRectangleBorder(
-                              //             borderRadius: BorderRadius.circular(
-                              //                 AppConfig.cardBorderRadius),
-                              //           ),
-                              //           title: Text(widget.productModel!.name!,
-                              //               style: AppConfig.titleFontStyle
-                              //                   .copyWith(
-                              //                       color: Colors.black87)),
-                              //           content: ClipRRect(
-                              //               borderRadius: BorderRadius.circular(
-                              //                   AppConfig.cardBorderRadius),
-                              //               child: Image.network(x)),
-                              //         ));
-
-                              _pageController =
-                                  PageController(initialPage: index);
-
-                              MyHelpers.showDialogFoto(context,
-                                  widget.productModel!.imagesPreview!.length,
-                                  title: widget.productModel!.name!,
-                                  pageController: _pageController,
-                                  listImageNetwork: [
-                                    for (var i = 0;
-                                        i <
-                                            widget.productModel!.imagesPreview!
-                                                .length;
-                                        i++)
-                                      Image.network(
-                                        widget.productModel!.imagesPreview![i],
-                                        fit: BoxFit.cover,
-                                      )
-                                  ]);
-                            },
-                            child: Container(
-                              margin: EdgeInsets.only(
-                                  right: (index ==
-                                          widget.productModel!.imagesPreview!
-                                                  .length -
-                                              1)
-                                      ? 0
-                                      : 8),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(
-                                    AppConfig.cardBorderRadius),
-                                child: FadeInImage.assetNetwork(
-                                  placeholder: "assets/images/logo_trip.png",
-                                  image: x,
-                                  height: 80,
-                                  width: 100,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ))
-                ],
-              )),
         ],
       ),
     ));

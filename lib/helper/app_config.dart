@@ -49,27 +49,29 @@ class MyHelpers {
               title: Text(title ?? "",
                   style:
                       AppConfig.titleFontStyle.copyWith(color: Colors.black87)),
-              content: ClipRRect(
-                  borderRadius:
-                      BorderRadius.circular(AppConfig.cardBorderRadius),
-                  child: (length > 1)
-                      ? SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.2,
-                          width: MediaQuery.of(context).size.width,
-                          child: PageView.builder(
-                              itemCount: length,
-                              scrollDirection: Axis.horizontal,
-                              physics: const BouncingScrollPhysics(),
-                              controller: pageController,
-                              itemBuilder: (_, i) {
-                                if (listImageAssets == null) {
-                                  return listImageNetwork![i];
-                                } else {
-                                  return listImageAssets[i];
-                                }
-                              }),
-                        )
-                      : imageAssets ?? imageNetwork),
+              content: SizedBox(
+                height: MediaQuery.of(context).size.width * 0.7,
+                child: ClipRRect(
+                    borderRadius:
+                        BorderRadius.circular(AppConfig.cardBorderRadius),
+                    child: (length > 1)
+                        ? SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: PageView.builder(
+                                itemCount: length,
+                                scrollDirection: Axis.horizontal,
+                                physics: const BouncingScrollPhysics(),
+                                controller: pageController,
+                                itemBuilder: (_, i) {
+                                  if (listImageAssets == null) {
+                                    return listImageNetwork![i];
+                                  } else {
+                                    return listImageAssets[i];
+                                  }
+                                }),
+                          )
+                        : imageAssets ?? imageNetwork),
+              ),
             ));
   }
 }
