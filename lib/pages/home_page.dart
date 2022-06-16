@@ -40,16 +40,6 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  void goToDetailPage(ProductModel productModel) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => DetailProductPage(
-                productModel: productModel,
-              )),
-    );
-  }
-
   @override
   void initState() {
     super.initState();
@@ -370,7 +360,8 @@ class _HomePageState extends State<HomePage> {
                                                         .circular(AppConfig
                                                             .cardBorderRadius),
                                                     onTap: () {
-                                                      goToDetailPage(e);
+                                                      MyHelpers.goToDetailPage(
+                                                          e, context);
                                                     },
                                                     child: Padding(
                                                       padding:
@@ -401,7 +392,8 @@ class _HomePageState extends State<HomePage> {
                                                         .circular(AppConfig
                                                             .cardBorderRadius),
                                                     onTap: () {
-                                                      goToDetailPage(e);
+                                                      MyHelpers.goToDetailPage(
+                                                          e, context);
                                                     },
                                                     child: Padding(
                                                       padding:

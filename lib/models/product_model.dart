@@ -139,8 +139,8 @@ List<ProductModel> listProduct = [
       'Camping Area',
       'Beach',
       'Restaurant',
-      'Parking Lot'
-          'Toilet',
+      'Parking Lot',
+      'Toilet',
     ],
     image: "assets/images/pantai_kelingking.jpg",
     imagesPreview: [

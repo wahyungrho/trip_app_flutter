@@ -27,15 +27,6 @@ class _SearchPageState extends State<SearchPage> {
     }
   }
 
-  void goToDetailPage(ProductModel productModel) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => DetailProductPage(
-                  productModel: productModel,
-                )));
-  }
-
   @override
   Widget build(BuildContext context) {
     Widget searchWidget() {
@@ -104,7 +95,7 @@ class _SearchPageState extends State<SearchPage> {
                       borderRadius:
                           BorderRadius.circular(AppConfig.cardBorderRadius),
                       onTap: () {
-                        goToDetailPage(e);
+                        MyHelpers.goToDetailPage(e, context);
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(3.0),
