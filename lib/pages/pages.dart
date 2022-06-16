@@ -8,3 +8,4 @@ import 'package:trip_app_flutter/widgets/widgets.dart';
 
 part 'home_page.dart';
 part 'detail_product_page.dart';
+part 'search_page.dart';

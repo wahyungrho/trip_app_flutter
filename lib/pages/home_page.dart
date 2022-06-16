@@ -42,11 +42,12 @@ class _HomePageState extends State<HomePage> {
 
   void goToDetailPage(ProductModel productModel) {
     Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => DetailProductPage(
-                  productModel: productModel,
-                )));
+      context,
+      MaterialPageRoute(
+          builder: (context) => DetailProductPage(
+                productModel: productModel,
+              )),
+    );
   }
 
   @override
@@ -100,32 +101,39 @@ class _HomePageState extends State<HomePage> {
     }
 
     Widget searchWidget() {
-      return Padding(
-        padding: EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
-        child: Container(
-          height: 50,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.white,
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 10,
-                spreadRadius: 2,
+      return GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => const SearchPage()));
+        },
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
+          child: Container(
+            height: 50,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 10,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                enabled: false,
+                border: InputBorder.none,
+                hintText: "Where do you want to go ?",
+                hintStyle: AppConfig.subTitleFontStyle.copyWith(
+                    color: Colors.grey[600], fontWeight: FontWeight.w400),
+                suffixIcon: const Icon(Icons.search_outlined,
+                    size: 24, color: Colors.grey),
+                suffixIconConstraints:
+                    const BoxConstraints(minHeight: 24, minWidth: 24),
               ),
-            ],
-          ),
-          child: TextField(
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: "Where do you want to go ?",
-              hintStyle: AppConfig.subTitleFontStyle.copyWith(
-                  color: Colors.grey[600], fontWeight: FontWeight.w400),
-              suffixIcon: const Icon(Icons.search_outlined,
-                  size: 24, color: Colors.grey),
-              suffixIconConstraints:
-                  const BoxConstraints(minHeight: 24, minWidth: 24),
             ),
           ),
         ),

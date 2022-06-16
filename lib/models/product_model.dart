@@ -861,7 +861,7 @@ List<ProductModel> listProduct = [
         "One of the recommendations for culinary places that serve Balinese specialties that are globally popular is Ayam Betutu Men Tempeh, which has been established since 1978. Located in the vicinity of the old Gilimanuk terminal, this legendary restaurant offers two types of chicken betutu dishes, namely fried and wet-cooked chicken betutu. Both of them will definitely be able to shake your tongue because they are made from young free-range chicken with an authentic Balinese culinary taste. The price of the betutu chicken package in this place is Rp. 60.000.",
     facilities: ['Chicken Betutu', 'Hot Tea', 'Ice Tea', 'Orange Juice'],
     price: 60000,
-    image: "assets/images/ayam_betutu.jpg",
+    image: "assets/images/ayam_betutu.jpeg",
     imagesPreview: [
       'https://b.zmtcdn.com/data/reviews_photos/41c/f137ed98043d58e8b9f8d7d4aa9cb41c_1546413590.jpg',
       'https://b.zmtcdn.com/data/pictures/4/1703494/269de224ec9e321bf2a1ed21f4c31358.png',
