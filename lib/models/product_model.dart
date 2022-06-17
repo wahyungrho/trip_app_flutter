@@ -10,6 +10,7 @@ class ProductModel {
   double? rating;
   String? location;
   String? urlLocation;
+  String? address;
   int? isReservation;
   int? isFavorite;
   int? isPopular;
@@ -26,6 +27,7 @@ class ProductModel {
     this.rating,
     this.location,
     this.urlLocation,
+    this.address,
     this.isReservation,
     this.isFavorite,
     this.isPopular,
@@ -53,6 +55,7 @@ List<ProductModel> listProduct = [
     location: "Kintamani, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Gn.+Batur/@-8.2401297,115.3687396,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd1f403c8e8ee3f:0xd38045afa18670b4!8m2!3d-8.2401299!4d115.3774944",
+    address: "Batur Sel., Kec. Kintamani, Kabupaten Bangli, Bali",
     isReservation: 0,
     isFavorite: 1,
     isPopular: 1,
@@ -77,6 +80,7 @@ List<ProductModel> listProduct = [
     location: "Pelaga, Badung - Bali",
     urlLocation:
         "https://www.google.com/maps/place/Gn.+Catur/@-8.2475708,115.177238,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd18eaadf660b7b:0x48cdcef1aca7cd65!8m2!3d-8.247571!4d115.1859928",
+    address: "Pelaga, Kec. Petang, Kabupaten Badung, Bali",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 0,
@@ -101,6 +105,7 @@ List<ProductModel> listProduct = [
     location: "Kintamani, Bangli - Bali",
     urlLocation:
         "https://www.google.com/maps/place/Gn.+Abang/@-8.2802776,115.4206896,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd1f7adac28eb37:0x7e0239cd53b4be4b!8m2!3d-8.2802778!4d115.4294444",
+    address: "Abangsongan, Kec. Kintamani, Kabupaten Bangli, Bali",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 0,
@@ -125,6 +130,7 @@ List<ProductModel> listProduct = [
     location: "Tabanan, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Gn.+Batukaru/@-8.334722,115.079023,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd187f8b41bd26f:0x688908b6268505d3!8m2!3d-8.3347222!4d115.0877778",
+    address: "Wongaya Gede, Kec. Penebel, Kabupaten Tabanan, Bali",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 0,
@@ -153,6 +159,7 @@ List<ProductModel> listProduct = [
     location: "Nusa Penida, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Kelingking+Beach+Nusa+Penida/@-8.4898383,115.038712,10z/data=!4m9!1m2!2m1!1spantai+kelingking!3m5!1s0x2dd26f1616cd2cc7:0xee84b7df0afbff19!8m2!3d-8.7503865!4d115.4726218!15sChFwYW50YWkga2VsaW5na2luZ1oTIhFwYW50YWkga2VsaW5na2luZ5IBEnRvdXJpc3RfYXR0cmFjdGlvbpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VReWEzUlFaVmgzRUFF",
+    address: "Bunga Mekar, Kec. Nusa Penida, Kabupaten Klungkung, Bali",
     isReservation: 0,
     isFavorite: 1,
     isPopular: 1,
@@ -177,6 +184,7 @@ List<ProductModel> listProduct = [
     location: "Mengwi, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Jl.+Pantai+Seseh,+Kec.+Mengwi,+Kabupaten+Badung,+Bali,+Indonesia/@-8.633155,115.114563,13z/data=!4m5!3m4!1s0x2dd23812bd379101:0x6be9fe0021552e02!8m2!3d-8.633155!4d115.1145627?hl=en-US",
+    address: "Cemagi, Kec. Mengwi, Kabupaten Badung, Bali",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 0,
@@ -199,6 +207,7 @@ List<ProductModel> listProduct = [
     location: "Nusa Penida, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Nusa+Penida+Tour+-+Atuh+Beach/@-8.7734113,115.6130639,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd2779b403c8185:0x25d68418b583cab3!8m2!3d-8.7734116!4d115.6218187",
+    address: "Pejukutan, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 1,
@@ -219,7 +228,8 @@ List<ProductModel> listProduct = [
     rating: 4.7,
     location: "Nusa Dua, Bali",
     urlLocation:
-        "https://www.google.com/maps/search/Pantai+Serenity+bali/@-8.4996574,114.7812353,10z/data=!3m1!4b1",
+        "https://www.google.com/maps/place/Pantai+Sawangan/@-8.8405852,115.1392791,12.84z/data=!4m13!1m7!3m6!1s0x2dd2433b2d3732df:0x15609a79dd600cb!2sJl.+Nusa+Dua,+Benoa,+Kec.+Kuta+Sel.,+Kabupaten+Badung,+Bali+80361!3b1!8m2!3d-8.8188174!4d115.2180323!3m4!1s0x2dd25cc45df40bfd:0xca9a4df5bb77fea1!8m2!3d-8.8255579!4d115.2210689",
+    address: "Jl. Gn. Payung I, Benoa, Kec. Kuta Sel., Kabupaten Badung, Bali",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 0,
@@ -241,7 +251,9 @@ List<ProductModel> listProduct = [
     rating: 4.5,
     location: "Tabanan, Bali",
     urlLocation:
-        "https://www.google.com/maps/search/Pantai+Pasut+Jalan+Raya+Pasut+Tibubiu+Kec.+Kerambitan,+Kabupaten+Tabanan,+Bali/@-8.563438,115.036742,13z?hl=en-US",
+        "https://www.google.com/maps/place/Pantai+Pasut/@-8.5634165,115.0279875,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd23122e42d049b:0xb8644744b2f08ac3!8m2!3d-8.563438!4d115.0367423",
+    address:
+        "Jalan Raya Pasut, Tibubiu, Kec. Kerambitan, Kabupaten Tabanan, Bali",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 0,
@@ -264,6 +276,7 @@ List<ProductModel> listProduct = [
     urlLocation:
         "https://www.google.com/maps/place/Pantai+Purnama/@-8.619297,115.309972,13z/data=!4m5!3m4!1s0x2dd215148c93693d:0x385d0c1b1fbff51b!8m2!3d-8.6192976!4d115.3099717?hl=en-US",
     isReservation: 0,
+    address: "Sukawati, Kec. Sukawati, Kabupaten Gianyar, Bali",
     isFavorite: 1,
     isPopular: 1,
   ),
@@ -286,6 +299,7 @@ List<ProductModel> listProduct = [
     location: "Ungasan, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Pantai+Melasti+Ungasan/@-8.8477419,115.1561857,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd25b937f74a77f:0xd7fc41e66544fbab!8m2!3d-8.8477419!4d115.1606704",
+    address: "Bali, Kabupaten Badung, Kec. Kuta Sel., Ungasan, Unnamed Road",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 1,
@@ -313,6 +327,8 @@ List<ProductModel> listProduct = [
     location: "Kerobokan, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Pantai+Batu+Belig/@-8.660057,115.1403734,14z/data=!4m8!1m2!2m1!1sPantai+Berawa+Canggu!3m4!1s0x2dd24774c0a631b1:0x9d16e84a9b99cabd!8m2!3d-8.6742449!4d115.1459553",
+    address:
+        "Jl. Batu Belig, Kerobokan Kelod, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
     isReservation: 0,
     isFavorite: 1,
     isPopular: 0,
@@ -335,6 +351,7 @@ List<ProductModel> listProduct = [
     location: "Nusa Penida, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Suwehan+Beach/@-8.795374,115.5969334,15z/data=!3m1!4b1!4m5!3m4!1s0x2dd279cfc7815793:0x2062f9f84602e8f5!8m2!3d-8.7953743!4d115.6056882",
+    address: "Tanglad, Kec. Nusa Penida, Kabupaten Klungkung, Bali 80771",
     isReservation: 0,
     isFavorite: 0,
     isPopular: 1,
@@ -369,6 +386,8 @@ List<ProductModel> listProduct = [
     location: "Kuta, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Baleka+Resort+%26+Spa/@-8.700099,115.167293,15z/data=!4m8!3m7!1s0x0:0x4baec4abfebcfd26!5m2!4m1!1i2!8m2!3d-8.7000817!4d115.1673402",
+    address:
+        "Jl. Werkudara Jl. Raya Legian, Legian, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -401,6 +420,8 @@ List<ProductModel> listProduct = [
     rating: 4.5,
     urlLocation:
         "https://www.google.com/maps/place/Grand+Inna+Kuta/@-8.7231271,115.1683566,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd246bca25e1947:0xcfd2766242240538!5m2!4m1!1i2!8m2!3d-8.7231271!4d115.1705453",
+    address:
+        "Jl. Pantai Kuta No.1, Pande Mas, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 1,
     isPopular: 1,
     isReservation: 1,
@@ -433,6 +454,8 @@ List<ProductModel> listProduct = [
     location: "Petitenget, Bali",
     urlLocation:
         "https://www.google.com/maps/place/The+Aveda+Boutique+Hotel/@-8.672205,115.16254,13z/data=!4m8!3m7!1s0x0:0x28e7a152c7a2b661!5m2!4m1!1i2!8m2!3d-8.671973!4d115.1625851?hl=en-US",
+    address:
+        "Jalan Petitenget No.168 Kerobokan Kelod, Seminyak, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -455,6 +478,8 @@ List<ProductModel> listProduct = [
     location: "Seminyak, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Hotel+Dafam+Savvoya+Seminyak+Bali/@-8.68279,115.167034,13z/data=!4m8!3m7!1s0x0:0x23c8659171e5844c!5m2!4m1!1i2!8m2!3d-8.6828771!4d115.1672526?hl=en-US",
+    address:
+        "Jl. Mertanadi No.14, Seminyak, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -479,6 +504,8 @@ List<ProductModel> listProduct = [
     location: "Seminyak, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Steenkool+Seminyak+Hotel/@-8.692541,115.173326,13z/data=!4m8!3m7!1s0x0:0xb803634656098ac7!5m2!4m1!1i2!8m2!3d-8.692541!4d115.173326?hl=en-US",
+    address:
+        "Jalan Sunset Road, Gg Baik-Baik No.1, Kuta, Seminyak, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -501,7 +528,9 @@ List<ProductModel> listProduct = [
     rating: 4.3,
     location: "Legian, Bali",
     urlLocation:
-        "https://www.google.com/maps/place/Hotel+%26+Residences+Riverview+Kuta+-+Bali/@-8.7177791,115.1763729,16z/data=!4m18!1m9!3m8!1s0x0:0x3037c24b5e7fb3cd!2sHotel+%26+Residences+Riverview+Kuta+-+Bali!5m2!4m1!1i2!8m2!3d-8.7177417!4d115.1807615!3m7!1s0x0:0x3037c24b5e7fb3cd!5m2!4m1!1i2!8m2!3d-8.7177417!4d115.1807615?hl=en-US",
+        "https://www.google.com/maps/place/Akmani+Legian/@-8.7129409,115.1708964,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd246c76c71c5a5:0xc3260bfe286aaf3!5m2!4m1!1i2!8m2!3d-8.7129462!4d115.1730851?hl=en-US",
+    address:
+        "Jl. Raya Legian No.177, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -531,6 +560,7 @@ List<ProductModel> listProduct = [
     location: "Legian, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Siesta+Legian+Hotel/@-8.707295,115.172398,13z/data=!4m8!3m7!1s0x0:0x5753a7459588f3f4!5m2!4m1!1i2!8m2!3d-8.7072955!4d115.1723983?hl=en-US",
+    address: "Jl. Bunut Sari No.8, Legian, Kec. Kuta, Kuta, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -558,6 +588,8 @@ List<ProductModel> listProduct = [
     location: "Legian, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Hotel+NEO%2B+Kuta+Legian/@-8.717536,115.175631,13z/data=!4m8!3m7!1s0x0:0x59b1dfaedf2b0a2f!5m2!4m1!1i2!8m2!3d-8.7175356!4d115.1756307?hl=en-US",
+    address:
+        "Jl. Legian Gg. Troppozone No.8, Legian, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 1,
     isPopular: 1,
     isReservation: 1,
@@ -593,7 +625,9 @@ List<ProductModel> listProduct = [
     rating: 4.3,
     location: "Seminyak, Bali",
     urlLocation:
-        "https://www.google.com/maps/place/Ramada+Encore+by+Wyndham+Seminyak+Bali/@-8.6854918,115.106113,13z/data=!4m9!1m2!2m1!1sramada+encore!3m5!1s0x2dd225d30df5efb1:0xa68eb71c1a7af0d7!5m2!4m1!1i2!15sCg1yYW1hZGEgZW5jb3JlIgOIAQFaDyINcmFtYWRhIGVuY29yZZIBBWhvdGVs?hl=en-US",
+        "https://www.google.com/maps/place/Ramada+Encore+by+Wyndham+Seminyak+Bali/@-8.6854865,115.1739621,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd225d30df5efb1:0xa68eb71c1a7af0d7!5m2!4m1!1i2!8m2!3d-8.6854918!4d115.1761508?hl=en-US",
+    address:
+        "Jl. Dewi Saraswati III, Seminyak, Kec. Kuta, Kota Denpasar, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -631,6 +665,8 @@ List<ProductModel> listProduct = [
     location: "Seminyak, Bali",
     urlLocation:
         "https://www.google.com/maps/place/HARRIS+Hotel+Seminyak+-+Bali/@-8.6895168,115.1593244,17z/data=!3m1!4b1!4m8!3m7!1s0x2dd2471f48d23ac9:0x309a8be16695e17b!5m2!4m1!1i2!8m2!3d-8.6895168!4d115.1638091",
+    address:
+        "Jl. Drupadi No.99, Seminyak, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 1,
     isReservation: 1,
@@ -664,6 +700,8 @@ List<ProductModel> listProduct = [
     location: "Kuta, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Bedrock+Hotel+Kuta+bali/@-8.737352,115.166515,13z/data=!4m8!3m7!1s0x0:0x81e57804f978a66d!5m2!4m1!1i2!8m2!3d-8.7373799!4d115.1665076?hl=en-US",
+    address:
+        "Jl. Wana Segara No.21, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -694,6 +732,8 @@ List<ProductModel> listProduct = [
     location: "Canggu, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Prime+Plus+Medical/@-8.6676497,115.1432501,17.66z/data=!4m5!3m4!1s0x2dd24776cfc15f71:0x850f2033ba09bdde!8m2!3d-8.6680402!4d115.1466911?hl=en-US",
+    address:
+        "Canggu, Jl. Subak Sari No.90A, Tibubeneng, Kuta Utara, Badung Regency, Bali 80361",
     isFavorite: 0,
     isPopular: 1,
     isReservation: 1,
@@ -723,6 +763,8 @@ List<ProductModel> listProduct = [
     location: "Denpasar, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Rumah+Sakit+Umum+Pusat+Sanglah/@-8.6694169,115.2221051,14z/data=!4m5!3m4!1s0x0:0x842c9d89a4a920dd!8m2!3d-8.6758359!4d115.2127549",
+    address:
+        "Jl. Diponegoro, Dauh Puri Klod, Kec. Denpasar Bar., Kota Denpasar, Bali 80113",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -744,6 +786,8 @@ List<ProductModel> listProduct = [
     location: "Kuta, Bali",
     urlLocation:
         "https://www.google.com/maps/place/ZAP+Clinic+-+Bali/@-8.7021661,115.1755314,208m/data=!3m2!1e3!4b1!4m5!3m4!1s0x2dd246cf861c8ec1:0xaddbc0dc4aa8e564!8m2!3d-8.7021622!4d115.1760703",
+    address:
+        "Jl. Dewi Sri No.88, Legian, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -770,6 +814,8 @@ List<ProductModel> listProduct = [
     location: "Denpasar, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Klinik+SOS+Gatotkaca/@-8.6530069,115.2142398,833m/data=!3m1!1e3!4m5!3m4!1s0x2dd2409efc24467f:0x58fdc75fe8feb1a3!8m2!3d-8.6530069!4d115.2161105",
+    address:
+        "Jl. Gatotkaca No.21, Dangin Puri Kauh, Kec. Denpasar Utara, Kota Denpasar, Bali 80116",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -797,6 +843,8 @@ List<ProductModel> listProduct = [
     location: "Nusa Dua, Bali",
     urlLocation:
         "https://www.google.com/maps/place/BIMC+Hospital+Nusa+Dua/@-8.7993745,115.2262724,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd24325b8592b69:0xde6d432ae4d18887!8m2!3d-8.7993745!4d115.2284611",
+    address:
+        "Kawasan ITDC Blok D, Jl. Nusa Dua, Benoa, Kec. Kuta Sel., Kabupaten Badung, Bali 80363",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -819,6 +867,8 @@ List<ProductModel> listProduct = [
     location: "Canggu, Bali",
     urlLocation:
         "https://www.google.com/maps/place/THE+MEDICAL+CANGGU+BATU+BOLONG+(Doctor,+Tes+Antigen+%26+PCR)/@-8.6456083,115.1388487,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd239c39bdda777:0x6a194531300470b7!8m2!3d-8.6456083!4d115.1410374",
+    address:
+        "Jl. Pantai Batu Bolong No.13A, Canggu, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 1,
@@ -849,6 +899,8 @@ List<ProductModel> listProduct = [
     location: "Badung, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Rumah+Sakit+Mangusada+Badung/@-8.5786598,115.1461377,12z/data=!4m5!3m4!1s0x2dd23bfdb9811107:0xa81c5fa8cbb11519!8m2!3d-8.5786598!4d115.1829684",
+    address:
+        "Jalan Raya Kapal, Mangupura, Mengwi, Kapal, Kec. Mengwi, Kabupaten Badung, Bali 80351",
     isFavorite: 1,
     isPopular: 1,
     isReservation: 1,
@@ -872,6 +924,8 @@ List<ProductModel> listProduct = [
     location: "Gilimanuk, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Ayam+Betutu+Men+Tempeh+sejak+1978/@-8.1584955,114.4173543,15z/data=!4m5!3m4!1s0x2dd14385c304a40b:0xfbd0199464b60d20!8m2!3d-8.168164!4d114.4361211",
+    address:
+        "Jl. Rajawali, Gilimanuk, Kec. Melaya, Kabupaten Jembrana, Bali 82252",
     isFavorite: 0,
     isPopular: 1,
     isReservation: 0,
@@ -894,6 +948,8 @@ List<ProductModel> listProduct = [
     location: "jimbaran, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Menega+Cafe/@-8.7806688,115.1621705,17z/data=!4m14!1m8!3m7!1s0x2dd244f3501c9553:0x74c847860f37ca9!2sMenega+Cafe!8m2!3d-8.7807808!4d115.1645358!14m1!1BCgIgAQ!3m4!1s0x2dd244f3501c9553:0x74c847860f37ca9!8m2!3d-8.7807808!4d115.1645358",
+    address:
+        "Jl. Four Seasons Muaya Beach, Jimbaran, Kec. Kuta Sel., Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 0,
@@ -922,6 +978,8 @@ List<ProductModel> listProduct = [
     location: "Denpasar, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Warung+Wardani/@-8.6510946,115.2136952,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x2dd2409e358fde2f:0xea7f870663495047!2sWarung+Wardani!8m2!3d-8.6510946!4d115.2158839!3m4!1s0x2dd2409e358fde2f:0xea7f870663495047!8m2!3d-8.6510946!4d115.2158839",
+    address:
+        "Jl. Yudistira No.2, Dangin Puri Kauh, Kec. Denpasar Utara, Kota Denpasar, Bali 80232",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 0,
@@ -946,6 +1004,7 @@ List<ProductModel> listProduct = [
     location: 'Kuta, Bali',
     urlLocation:
         "https://www.google.com/maps/place/Nasi+Pecel+Bu+Tinuk/@-8.7332143,115.1755585,17z/data=!3m1!4b1!4m14!1m8!3m7!1s0x2dd24404ecad42a5:0x436f48b9fb500583!2sNasi+Pecel+Bu+Tinuk!8m2!3d-8.7332509!4d115.1777482!14m1!1BCgIYIQ!3m4!1s0x2dd24404ecad42a5:0x436f48b9fb500583!8m2!3d-8.7332509!4d115.1777482",
+    address: "Jalan Raya, Kuta, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 0,
@@ -975,6 +1034,8 @@ List<ProductModel> listProduct = [
     location: 'Nusa Dua, Bali',
     urlLocation:
         "https://www.google.com/maps/place/Bebek+Bengil/@-8.801565,115.2311087,17z/data=!3m1!4b1!4m5!3m4!1s0x2dd2432818279391:0x37ba48b3cbb94b35!8m2!3d-8.801565!4d115.2355934",
+    address:
+        "ITDC Complex, Nusa Dua Beach, Benoa, Kec. Kuta Sel., Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 0,
@@ -1005,6 +1066,8 @@ List<ProductModel> listProduct = [
     location: "Seminyak, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Made's+Warung/@-8.6894097,115.1655635,17z/data=!3m1!4b1!4m14!1m8!3m7!1s0x2dd247219ae78919:0xdfdeb1e4339ec6b1!2sMade's+Warung!8m2!3d-8.6894157!4d115.1677114!14m1!1BCgIYIQ!3m4!1s0x2dd247219ae78919:0xdfdeb1e4339ec6b1!8m2!3d-8.6894157!4d115.1677114?hl=en-US",
+    address:
+        "Jl. Raya Seminyak, Seminyak, Kuta, Jl. Raya Seminyak No.7, Seminyak, Kec. Kuta, Kabupaten Badung, Bali 80361",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 0,
@@ -1038,6 +1101,8 @@ List<ProductModel> listProduct = [
     location: "Ubud, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Bebek+Tepi+Sawah+Restaurant+Ubud/@-8.523635,115.272846,13z/data=!4m5!3m4!1s0x0:0x4bb1b97df4b56821!8m2!3d-8.5236352!4d115.2728463?hl=en-US",
+    address:
+        "Jalan raya goa gajah, banjar teges, Peliatan, Kecamatan Ubud, Kabupaten Gianyar, Bali 80571",
     isFavorite: 1,
     isPopular: 1,
     isReservation: 0,
@@ -1068,6 +1133,8 @@ List<ProductModel> listProduct = [
     location: "Sanur, Bali",
     urlLocation:
         "https://www.google.com/maps/place/Genius+Cafe+Sanur/@-8.7114749,115.2516104,17z/data=!3m1!4b1!4m12!1m6!3m5!1s0x2dd241969c6cccaf:0x32ae374cc34b1dc6!2sGenius+Cafe+Sanur!8m2!3d-8.71147!4d115.2537978!3m4!1s0x2dd241969c6cccaf:0x32ae374cc34b1dc6!8m2!3d-8.71147!4d115.2537978?hl=en-US",
+    address:
+        "Jl. Kusuma Sari, Sanur Kauh, Denpasar Selatan, Kota Denpasar, Bali 80228",
     isFavorite: 0,
     isPopular: 1,
     isReservation: 0,
@@ -1093,6 +1160,8 @@ List<ProductModel> listProduct = [
     location: 'Denpasar, Bali',
     urlLocation:
         "https://www.google.com/maps/place/Warung+Liku+Nasi+Bali+-+Ayam+Betutu/@-8.674808,115.23015,13z/data=!4m5!3m4!1s0x0:0xd23b84731fcd109f!8m2!3d-8.6748053!4d115.2300641?hl=en-US",
+    address:
+        "Jl. Tukad Musi No.19 A, Panjer, Denpasar Selatan, Kota Denpasar, Bali 80239",
     isFavorite: 0,
     isPopular: 0,
     isReservation: 0,
