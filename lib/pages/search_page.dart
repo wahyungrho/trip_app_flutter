@@ -90,29 +90,53 @@ class _SearchPageState extends State<SearchPage> {
         child: Wrap(
             spacing: 5,
             runSpacing: 5,
-            children: searchList
-                .map((e) => InkWell(
-                      borderRadius:
-                          BorderRadius.circular(AppConfig.cardBorderRadius),
-                      onTap: () {
-                        MyHelpers.goToDetailPage(e, context);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(3.0),
-                        child: CardProductWidget(
-                          imageAssets: e.image,
-                          productModel: e,
-                          isFavorit: () {
-                            setState(() {
-                              (e.isFavorite == 1)
-                                  ? e.isFavorite = 0
-                                  : e.isFavorite = 1;
-                            });
+            children: (searchList.isNotEmpty)
+                ? searchList
+                    .map((e) => InkWell(
+                          borderRadius:
+                              BorderRadius.circular(AppConfig.cardBorderRadius),
+                          onTap: () {
+                            MyHelpers.goToDetailPage(e, context);
                           },
-                        ),
-                      ),
-                    ))
-                .toList()),
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: CardProductWidget(
+                              imageAssets: e.image,
+                              productModel: e,
+                              isFavorit: () {
+                                setState(() {
+                                  (e.isFavorite == 1)
+                                      ? e.isFavorite = 0
+                                      : e.isFavorite = 1;
+                                });
+                              },
+                            ),
+                          ),
+                        ))
+                    .toList()
+                : listProduct
+                    .map((e) => InkWell(
+                          borderRadius:
+                              BorderRadius.circular(AppConfig.cardBorderRadius),
+                          onTap: () {
+                            MyHelpers.goToDetailPage(e, context);
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: CardProductWidget(
+                              imageAssets: e.image,
+                              productModel: e,
+                              isFavorit: () {
+                                setState(() {
+                                  (e.isFavorite == 1)
+                                      ? e.isFavorite = 0
+                                      : e.isFavorite = 1;
+                                });
+                              },
+                            ),
+                          ),
+                        ))
+                    .toList()),
       );
     }
 
@@ -122,32 +146,64 @@ class _SearchPageState extends State<SearchPage> {
       },
       child: Scaffold(
           body: SafeArea(
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              searchWidget(),
-              (searchList.isNotEmpty)
-                  ? Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: AppConfig.defaultMargin),
-                      child: TextTitleWidget(
-                        "Search result ${searchList.length}",
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
+            Widget>[
+          searchWidget(),
+          (searchList.isNotEmpty)
+              ? Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
+                  child: TextTitleWidget(
+                    "Search result ${searchList.length}",
+                  ),
+                )
+              : const SizedBox(),
+          const SizedBox(
+            height: 10,
+          ),
+          (searchList.isEmpty)
+              ? Expanded(
+                  child: Column(
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Lottie.asset('assets/images/empty_search.json',
+                                width: MediaQuery.of(context).size.width * 0.7),
+                            SizedBox(
+                              height: AppConfig.defaultMargin,
+                            ),
+                            Text(
+                              "Oops, Destination not found",
+                              style: AppConfig.titleFontStyle.copyWith(
+                                fontSize: 18,
+                              ),
+                            ),
+                            SizedBox(
+                              height: AppConfig.defaultMargin - 10,
+                            ),
+                            Text(
+                              "Please find another destination",
+                              style: AppConfig.subTitleFontStyle
+                                  .copyWith(fontSize: 14, color: Colors.grey),
+                            ),
+                          ],
+                        ),
                       ),
-                    )
-                  : const SizedBox(),
-              const SizedBox(
-                height: 10,
-              ),
-              (searchList.isEmpty)
-                  ? const SizedBox()
-                  : Expanded(
-                      child: ListView(children: [
-                      productListWidget(),
-                      SizedBox(
-                        height: AppConfig.defaultMargin,
-                      ),
-                    ])),
-            ]),
+                      Expanded(flex: 1, child: Container())
+                    ],
+                  ),
+                )
+              : Expanded(
+                  child: ListView(children: [
+                  productListWidget(),
+                  SizedBox(
+                    height: AppConfig.defaultMargin,
+                  ),
+                ])),
+        ]),
       )),
     );
   }

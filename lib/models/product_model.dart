@@ -946,6 +946,7 @@ List<ProductModel> listProduct = [
       'https://b.zmtcdn.com/data/reviews_photos/01e/5ae5d6bb58c3cc13e67070293606b01e_1529224255.jpg'
     ],
     location: "jimbaran, Bali",
+    rating: 4.2,
     urlLocation:
         "https://www.google.com/maps/place/Menega+Cafe/@-8.7806688,115.1621705,17z/data=!4m14!1m8!3m7!1s0x2dd244f3501c9553:0x74c847860f37ca9!2sMenega+Cafe!8m2!3d-8.7807808!4d115.1645358!14m1!1BCgIgAQ!3m4!1s0x2dd244f3501c9553:0x74c847860f37ca9!8m2!3d-8.7807808!4d115.1645358",
     address:

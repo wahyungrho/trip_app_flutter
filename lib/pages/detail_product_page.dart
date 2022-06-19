@@ -11,11 +11,52 @@ class DetailProductPage extends StatefulWidget {
 
 class _DetailProductPageState extends State<DetailProductPage> {
   PageController _pageController = PageController();
+  String category = '';
+  bool isLoadingPage = false;
+
+  void loadingSession() async {
+    setState(() {
+      isLoadingPage = true;
+    });
+
+    await Future.delayed(const Duration(milliseconds: 500), () {
+      category = listCategory
+              .where((element) => element.id == widget.productModel?.categoryId)
+              .first
+              .name ??
+          '';
+
+      setState(() {
+        isLoadingPage = false;
+      });
+    });
+  }
+
+  String getUomPerPrice(categoryIdD) {
+    String perPriceName = '';
+    switch (categoryIdD) {
+      case 3:
+        perPriceName = '/night';
+        break;
+      case 5:
+        perPriceName = '/menu';
+        break;
+      default:
+    }
+
+    return perPriceName;
+  }
 
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadingSession();
   }
 
   @override
@@ -128,31 +169,31 @@ class _DetailProductPageState extends State<DetailProductPage> {
                 const SizedBox(
                   height: 5,
                 ),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.location_on_outlined,
-                      color: Color(0xff135DB3),
-                      size: 18,
-                    ),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      widget.productModel!.location!,
-                      style: const TextStyle(
-                        color: Colors.grey,
-                      ),
-                    )
-                  ],
+                Text(
+                  category,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                  ),
                 )
               ],
             ),
             InkWell(
               borderRadius: BorderRadius.circular(AppConfig.cardBorderRadius),
-              onTap: () {},
-              child: const Icon(
-                Icons.favorite_border,
+              onTap: () {
+                setState(() {
+                  if (widget.productModel!.isFavorite! == 0) {
+                    widget.productModel!.isFavorite = 1;
+                  } else {
+                    widget.productModel!.isFavorite = 0;
+                  }
+                });
+              },
+              child: Icon(
+                (widget.productModel!.isFavorite! == 0)
+                    ? Icons.favorite_border
+                    : Icons.favorite,
+                color:
+                    (widget.productModel!.isFavorite! == 0) ? null : Colors.red,
               ),
             ),
           ],
@@ -244,24 +285,6 @@ class _DetailProductPageState extends State<DetailProductPage> {
                       final x = widget.productModel!.imagesPreview![index];
                       return GestureDetector(
                         onTap: () {
-                          // showDialog(
-                          //     context: context,
-                          //     builder: (context) => AlertDialog(
-                          //           backgroundColor: Colors.white,
-                          //           shape: RoundedRectangleBorder(
-                          //             borderRadius: BorderRadius.circular(
-                          //                 AppConfig.cardBorderRadius),
-                          //           ),
-                          //           title: Text(widget.productModel!.name!,
-                          //               style: AppConfig.titleFontStyle
-                          //                   .copyWith(
-                          //                       color: Colors.black87)),
-                          //           content: ClipRRect(
-                          //               borderRadius: BorderRadius.circular(
-                          //                   AppConfig.cardBorderRadius),
-                          //               child: Image.network(x)),
-                          //         ));
-
                           _pageController = PageController(initialPage: index);
 
                           MyHelpers.showDialogFoto(
@@ -309,37 +332,204 @@ class _DetailProductPageState extends State<DetailProductPage> {
           ));
     }
 
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          imageHeaderWidget(),
-          SizedBox(
-            height: AppConfig.defaultMargin,
-          ),
-          widgetTitle(),
-          SizedBox(
-            height: AppConfig.defaultMargin,
-          ),
-          descriptionWidget(),
-          SizedBox(
-            height: AppConfig.defaultMargin,
-          ),
-          (widget.productModel!.facilities!.isEmpty)
-              ? const SizedBox()
-              : facilitiesWidget(),
-          (widget.productModel!.facilities!.isEmpty)
-              ? const SizedBox()
-              : SizedBox(
-                  height: AppConfig.defaultMargin,
+    Widget addressWidget() {
+      return Padding(
+        padding: EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  "Location",
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
                 ),
-          photosWidget(),
-          SizedBox(
-            height: AppConfig.defaultMargin,
-          ),
-        ],
-      ),
-    ));
+                InkWell(
+                  borderRadius:
+                      BorderRadius.circular(AppConfig.cardBorderRadius),
+                  onTap: () {
+                    launchUrl(Uri.parse(widget.productModel!.urlLocation!));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Row(
+                      children: [
+                        Text(
+                          "View Map",
+                          style: AppConfig.subTitleFontStyle.copyWith(
+                              fontSize: 12, fontWeight: FontWeight.w400),
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        const Icon(
+                          Icons.map_outlined,
+                          size: 18,
+                          color: Color(0xff135DB3),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Row(
+              children: [
+                const Icon(
+                  Icons.pin_drop_outlined,
+                  size: 18,
+                  color: Color(0xff135DB3),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: Text(
+                    "${widget.productModel!.address!} - ${widget.productModel!.location!}",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                        height: 1.5,
+                        fontSize: 12,
+                        color: Colors.black.withOpacity(0.7)),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Scaffold(
+        body: (isLoadingPage)
+            ? Center(
+                child: CircularProgressIndicator(
+                  color: Theme.of(context).primaryColor,
+                ),
+              )
+            : RefreshIndicator(
+                onRefresh: () async {
+                  loadingSession();
+                },
+                child: SingleChildScrollView(
+                  physics: const ClampingScrollPhysics(),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      imageHeaderWidget(),
+                      SizedBox(
+                        height: AppConfig.defaultMargin,
+                      ),
+                      widgetTitle(),
+                      SizedBox(
+                        height: AppConfig.defaultMargin,
+                      ),
+                      descriptionWidget(),
+                      SizedBox(
+                        height: AppConfig.defaultMargin,
+                      ),
+                      (widget.productModel!.facilities!.isEmpty)
+                          ? const SizedBox()
+                          : facilitiesWidget(),
+                      (widget.productModel!.facilities!.isEmpty)
+                          ? const SizedBox()
+                          : SizedBox(
+                              height: AppConfig.defaultMargin,
+                            ),
+                      photosWidget(),
+                      SizedBox(
+                        height: AppConfig.defaultMargin,
+                      ),
+                      addressWidget(),
+                      SizedBox(
+                        height: AppConfig.defaultMargin,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+        bottomNavigationBar: (widget.productModel!.price == 0 &&
+                widget.productModel!.isReservation == 0)
+            ? const SizedBox()
+            : Container(
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 10,
+                    spreadRadius: 5,
+                  )
+                ], color: Colors.white),
+                height: AppConfig.defaultMargin * 3,
+                child: Row(children: [
+                  (widget.productModel!.price == 0)
+                      ? const SizedBox()
+                      : Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 10,
+                                horizontal: AppConfig.defaultMargin),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Start From",
+                                    style: AppConfig.subTitleFontStyle.copyWith(
+                                        color: Colors.grey,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w400)),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                RichText(
+                                    text: TextSpan(children: [
+                                  TextSpan(
+                                    text: NumberFormat.currency(
+                                            decimalDigits: 0,
+                                            locale: 'id',
+                                            symbol: 'Rp ')
+                                        .format(widget.productModel!.price!),
+                                    style: AppConfig.titleFontStyle.copyWith(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Theme.of(context).primaryColor),
+                                  ),
+                                  TextSpan(
+                                      text: getUomPerPrice(
+                                          widget.productModel!.categoryId),
+                                      style: const TextStyle(
+                                          fontSize: 12, color: Colors.grey)),
+                                ]))
+                              ],
+                            ),
+                          ),
+                        ),
+                  (widget.productModel!.isReservation == 0)
+                      ? const SizedBox()
+                      : Expanded(
+                          child: SizedBox(
+                          height: 60,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            child: Text("Book Now",
+                                style: AppConfig.titleFontStyle.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white)),
+                            style: ElevatedButton.styleFrom(
+                              shape: (widget.productModel!.price == 0)
+                                  ? null
+                                  : RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(
+                                              AppConfig.defaultMargin)),
+                                    ),
+                            ),
+                          ),
+                        )),
+                ])));
   }
 }
