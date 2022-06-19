@@ -16,3 +16,4 @@ part 'search_page.dart';
 part 'main_pages.dart';
 part 'favourite_pages.dart';
 part 'see_more_pages.dart';
+part 'profile_page.dart';

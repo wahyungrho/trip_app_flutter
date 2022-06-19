@@ -27,7 +27,7 @@ class _MainPageState extends State<MainPage> {
           child: [
         const HomePage(),
         const FavouritePage(),
-        const Text("Profile"),
+        const ProfilePage(),
       ].elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
