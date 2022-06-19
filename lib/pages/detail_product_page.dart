@@ -317,12 +317,14 @@ class _DetailProductPageState extends State<DetailProductPage> {
                             borderRadius: BorderRadius.circular(
                                 AppConfig.cardBorderRadius),
                             child: FadeInImage.assetNetwork(
-                                placeholder: "assets/images/logo_trip.png",
-                                image: x,
-                                height: 80,
-                                width: 100,
-                                fit: BoxFit.cover,
-                                placeholderFit: BoxFit.contain),
+                              placeholder: "assets/images/logo_trip.png",
+                              image: x,
+                              height: 80,
+                              width: 100,
+                              fit: BoxFit.cover,
+                              placeholderFit: BoxFit.contain,
+                              placeholderScale: 1,
+                            ),
                           ),
                         ),
                       );
@@ -428,6 +430,10 @@ class _DetailProductPageState extends State<DetailProductPage> {
                       SizedBox(
                         height: AppConfig.defaultMargin,
                       ),
+                      addressWidget(),
+                      SizedBox(
+                        height: AppConfig.defaultMargin,
+                      ),
                       descriptionWidget(),
                       SizedBox(
                         height: AppConfig.defaultMargin,
@@ -441,10 +447,6 @@ class _DetailProductPageState extends State<DetailProductPage> {
                               height: AppConfig.defaultMargin,
                             ),
                       photosWidget(),
-                      SizedBox(
-                        height: AppConfig.defaultMargin,
-                      ),
-                      addressWidget(),
                       SizedBox(
                         height: AppConfig.defaultMargin,
                       ),
@@ -479,30 +481,33 @@ class _DetailProductPageState extends State<DetailProductPage> {
                                 Text("Start From",
                                     style: AppConfig.subTitleFontStyle.copyWith(
                                         color: Colors.grey,
-                                        fontSize: 15,
+                                        fontSize: 12,
                                         fontWeight: FontWeight.w400)),
                                 const SizedBox(
                                   height: 5,
                                 ),
-                                RichText(
-                                    text: TextSpan(children: [
-                                  TextSpan(
-                                    text: NumberFormat.currency(
-                                            decimalDigits: 0,
-                                            locale: 'id',
-                                            symbol: 'Rp ')
-                                        .format(widget.productModel!.price!),
-                                    style: AppConfig.titleFontStyle.copyWith(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                        color: Theme.of(context).primaryColor),
-                                  ),
-                                  TextSpan(
-                                      text: getUomPerPrice(
-                                          widget.productModel!.categoryId),
-                                      style: const TextStyle(
-                                          fontSize: 12, color: Colors.grey)),
-                                ]))
+                                Expanded(
+                                  child: RichText(
+                                      text: TextSpan(children: [
+                                    TextSpan(
+                                      text: NumberFormat.currency(
+                                              decimalDigits: 0,
+                                              locale: 'id',
+                                              symbol: 'Rp ')
+                                          .format(widget.productModel!.price!),
+                                      style: AppConfig.titleFontStyle.copyWith(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          color:
+                                              Theme.of(context).primaryColor),
+                                    ),
+                                    TextSpan(
+                                        text: getUomPerPrice(
+                                            widget.productModel!.categoryId),
+                                        style: const TextStyle(
+                                            fontSize: 10, color: Colors.grey)),
+                                  ])),
+                                )
                               ],
                             ),
                           ),
@@ -516,7 +521,7 @@ class _DetailProductPageState extends State<DetailProductPage> {
                             onPressed: () {},
                             child: Text("Book Now",
                                 style: AppConfig.titleFontStyle.copyWith(
-                                    fontSize: 16,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white)),
                             style: ElevatedButton.styleFrom(

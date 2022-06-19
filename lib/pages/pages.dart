@@ -6,9 +6,13 @@ import 'package:lottie/lottie.dart';
 import 'package:trip_app_flutter/helper/app_config.dart';
 import 'package:trip_app_flutter/models/category_model.dart';
 import 'package:trip_app_flutter/models/product_model.dart';
+import 'package:trip_app_flutter/models/profile_model.dart';
 import 'package:trip_app_flutter/widgets/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'home_page.dart';
 part 'detail_product_page.dart';
 part 'search_page.dart';
+part 'main_pages.dart';
+part 'favourite_pages.dart';
+part 'see_more_pages.dart';

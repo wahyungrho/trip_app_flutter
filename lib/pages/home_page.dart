@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
         child: Row(
           children: [
             Image.asset(
-              'assets/images/foto_profil.png',
+              profileModel.image!,
               width: 50,
               height: 50,
             ),
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Hi, Putri",
+                  "Hi, ${profileModel.fullName!}",
                   style: AppConfig.titleFontStyle,
                 ),
                 const SizedBox(
@@ -332,7 +332,15 @@ class _HomePageState extends State<HomePage> {
                                       InkWell(
                                         borderRadius: BorderRadius.circular(
                                             AppConfig.cardBorderRadius),
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (_) => SeeMorePage(
+                                                        category:
+                                                            selectedCategory,
+                                                      )));
+                                        },
                                         child: Row(
                                           children: [
                                             Text(

@@ -4,16 +4,22 @@ class CardProductWidget extends StatelessWidget {
   final String? imageAssets;
   final ProductModel? productModel;
   final Function? isFavorit;
+  final double? width;
   const CardProductWidget(
-      {Key? key, this.imageAssets, this.productModel, this.isFavorit})
+      {Key? key,
+      this.imageAssets,
+      this.productModel,
+      this.isFavorit,
+      this.width})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.5 -
-          AppConfig.defaultMargin -
-          10,
+      width: width ??
+          MediaQuery.of(context).size.width * 0.5 -
+              AppConfig.defaultMargin -
+              10,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppConfig.cardBorderRadius),
         color: Colors.white,

@@ -3,7 +3,7 @@ import 'package:trip_app_flutter/models/product_model.dart';
 import 'package:trip_app_flutter/pages/pages.dart';
 
 class AppConfig {
-  static String appVersion = '3';
+  static String appVersion = '4';
   static double defaultMargin = 20;
   static double cardBorderRadius = 10;
 
