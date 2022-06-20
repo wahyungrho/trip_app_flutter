@@ -88,67 +88,73 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
       body: (isLoadingPage)
           ? const Center(child: CircularProgressIndicator())
-          : ListView(
+          : Column(
               children: [
-                profileHeader(),
-                SizedBox(
-                  height: AppConfig.defaultMargin,
-                ),
-                ListTile(
-                  leading: const Icon(Icons.phone_android_outlined),
-                  title: Text(profileModel.phone!,
-                      style: AppConfig.titleFontStyle
-                          .copyWith(fontWeight: FontWeight.w400, fontSize: 14)),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
-                  child: const Divider(
-                    height: 0,
-                    color: Colors.grey,
-                  ),
-                ),
-                ListTile(
-                  leading: const Icon(Icons.mail_outline_outlined),
-                  title: Text(profileModel.email!,
-                      style: AppConfig.titleFontStyle
-                          .copyWith(fontWeight: FontWeight.w400, fontSize: 14)),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
-                  child: const Divider(
-                    height: 0,
-                    color: Colors.grey,
-                  ),
-                ),
-                ListTile(
-                  leading: const Icon(Icons.female_outlined),
-                  title: Text(profileModel.gender!,
-                      style: AppConfig.titleFontStyle
-                          .copyWith(fontWeight: FontWeight.w400, fontSize: 14)),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
-                  child: const Divider(
-                    height: 0,
-                    color: Colors.grey,
-                  ),
-                ),
-                ListTile(
-                  leading: const Icon(Icons.location_on_outlined),
-                  title: Text(profileModel.address!,
-                      overflow: TextOverflow.ellipsis,
-                      style: AppConfig.titleFontStyle
-                          .copyWith(fontWeight: FontWeight.w400, fontSize: 14)),
-                ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
-                  child: const Divider(
-                    height: 0,
-                    color: Colors.grey,
+                Expanded(
+                  child: ListView(
+                    children: [
+                      profileHeader(),
+                      SizedBox(
+                        height: AppConfig.defaultMargin,
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.phone_android_outlined),
+                        title: Text(profileModel.phone!,
+                            style: AppConfig.titleFontStyle.copyWith(
+                                fontWeight: FontWeight.w400, fontSize: 14)),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: AppConfig.defaultMargin),
+                        child: const Divider(
+                          height: 0,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.mail_outline_outlined),
+                        title: Text(profileModel.email!,
+                            style: AppConfig.titleFontStyle.copyWith(
+                                fontWeight: FontWeight.w400, fontSize: 14)),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: AppConfig.defaultMargin),
+                        child: const Divider(
+                          height: 0,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.female_outlined),
+                        title: Text(profileModel.gender!,
+                            style: AppConfig.titleFontStyle.copyWith(
+                                fontWeight: FontWeight.w400, fontSize: 14)),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: AppConfig.defaultMargin),
+                        child: const Divider(
+                          height: 0,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.location_on_outlined),
+                        title: Text(profileModel.address!,
+                            overflow: TextOverflow.ellipsis,
+                            style: AppConfig.titleFontStyle.copyWith(
+                                fontWeight: FontWeight.w400, fontSize: 14)),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: AppConfig.defaultMargin),
+                        child: const Divider(
+                          height: 0,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
