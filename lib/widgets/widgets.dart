@@ -9,3 +9,5 @@ import 'package:trip_app_flutter/models/product_model.dart';
 part 'card_product_widget.dart';
 part 'category_widget.dart';
 part 'text_title_page.dart';
+part 'input_box_widget.dart';
+part 'row_template_widget.dart';
