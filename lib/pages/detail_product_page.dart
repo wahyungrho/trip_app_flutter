@@ -518,7 +518,14 @@ class _DetailProductPageState extends State<DetailProductPage> {
                           child: SizedBox(
                           height: 60,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => FormBookNow(
+                                            productModel: widget.productModel,
+                                          )));
+                            },
                             child: Text("Book Now",
                                 style: AppConfig.titleFontStyle.copyWith(
                                     fontSize: 14,

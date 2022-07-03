@@ -44,46 +44,41 @@ class _FavouritePageState extends State<FavouritePage> {
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : RefreshIndicator(
-              onRefresh: () async {
-                loadingSession();
-              },
-              child: ListView(
-                physics: const BouncingScrollPhysics(),
-                children: listProduct
-                    .where((element) => element.isFavorite == 1)
-                    .map((e) => Padding(
-                          padding: EdgeInsets.fromLTRB(
-                              AppConfig.defaultMargin - 3,
-                              listProduct.indexOf(e) == 0
-                                  ? AppConfig.defaultMargin - 10 - 3
-                                  : 0,
-                              AppConfig.defaultMargin - 3,
-                              10 - 3),
-                          child: InkWell(
-                            borderRadius: BorderRadius.circular(
-                                AppConfig.cardBorderRadius),
-                            onTap: () {
-                              MyHelpers.goToDetailPage(e, context);
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(3.0),
-                              child: CardProductWidget(
-                                imageAssets: e.image,
-                                productModel: e,
-                                isFavorit: () {
-                                  setState(() {
-                                    (e.isFavorite == 0)
-                                        ? e.isFavorite = 1
-                                        : e.isFavorite = 0;
-                                  });
-                                },
-                              ),
+          : ListView(
+              physics: const BouncingScrollPhysics(),
+              children: listProduct
+                  .where((element) => element.isFavorite == 1)
+                  .map((e) => Padding(
+                        padding: EdgeInsets.fromLTRB(
+                            AppConfig.defaultMargin - 3,
+                            listProduct.indexOf(e) == 0
+                                ? AppConfig.defaultMargin - 10 - 3
+                                : 0,
+                            AppConfig.defaultMargin - 3,
+                            10 - 3),
+                        child: InkWell(
+                          borderRadius:
+                              BorderRadius.circular(AppConfig.cardBorderRadius),
+                          onTap: () {
+                            MyHelpers.goToDetailPage(e, context);
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: CardProductWidget(
+                              imageAssets: e.image,
+                              productModel: e,
+                              isFavorit: () {
+                                setState(() {
+                                  (e.isFavorite == 0)
+                                      ? e.isFavorite = 1
+                                      : e.isFavorite = 0;
+                                });
+                              },
                             ),
                           ),
-                        ))
-                    .toList(),
-              ),
+                        ),
+                      ))
+                  .toList(),
             ),
     );
   }

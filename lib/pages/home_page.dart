@@ -84,7 +84,18 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const Spacer(),
-            const Icon(Icons.notifications_outlined),
+            InkWell(
+                borderRadius: BorderRadius.circular(AppConfig.cardBorderRadius),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => const NotificationPage()));
+                },
+                child: const Padding(
+                  padding: EdgeInsets.all(3.0),
+                  child: Icon(Icons.notifications_outlined),
+                )),
           ],
         ),
       );
