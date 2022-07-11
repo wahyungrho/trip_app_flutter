@@ -32,51 +32,49 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const MainPage(),
-        ),
-      );
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    getAfterSplash() async {
+      Future.delayed(const Duration(seconds: 3), () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MainPage(),
+          ),
+        );
+      });
+    }
+
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: Center(
-              child: Image.asset(
-                'assets/images/logo_trip.png',
-                width: 200,
-                height: 200,
+        body: FutureBuilder(
+      initialData: null,
+      future: getAfterSplash(),
+      builder: (_, snap) {
+        return Column(
+          children: [
+            Expanded(
+              child: Center(
+                child: Image.asset(
+                  'assets/images/logo_trip.png',
+                  width: 200,
+                  height: 200,
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: AppConfig.defaultMargin),
-            child: Text(
-              "Version 1.0.${AppConfig.appVersion}",
-              style: AppConfig.subTitleFontStyle
-                  .copyWith(fontWeight: FontWeight.w400, color: Colors.black54),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: AppConfig.defaultMargin),
+              child: Text(
+                "Version 1.0.${AppConfig.appVersion}",
+                style: AppConfig.subTitleFontStyle.copyWith(
+                    fontWeight: FontWeight.w400, color: Colors.black54),
+              ),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        );
+      },
+    ));
   }
 }

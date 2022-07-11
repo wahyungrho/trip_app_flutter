@@ -146,64 +146,65 @@ class _SearchPageState extends State<SearchPage> {
       },
       child: Scaffold(
           body: SafeArea(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-            Widget>[
-          searchWidget(),
-          (searchList.isNotEmpty)
-              ? Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: AppConfig.defaultMargin),
-                  child: TextTitleWidget(
-                    "Search result ${searchList.length}",
-                  ),
-                )
-              : const SizedBox(),
-          const SizedBox(
-            height: 10,
-          ),
-          (searchList.isEmpty)
-              ? Expanded(
-                  child: Column(
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Lottie.asset('assets/images/empty_search.json',
-                                width: MediaQuery.of(context).size.width * 0.7),
-                            SizedBox(
-                              height: AppConfig.defaultMargin,
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              searchWidget(),
+              (searchList.isNotEmpty)
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: AppConfig.defaultMargin),
+                      child: TextTitleWidget(
+                        "Search result ${searchList.length}",
+                      ),
+                    )
+                  : const SizedBox(),
+              const SizedBox(
+                height: 10,
+              ),
+              (searchList.isEmpty)
+                  ? Expanded(
+                      child: ListView(
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: [
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.3,
+                            child: Lottie.asset(
+                              'assets/images/empty_search.json',
                             ),
-                            Text(
+                          ),
+                          SizedBox(
+                            height: AppConfig.defaultMargin,
+                          ),
+                          Center(
+                            child: Text(
                               "Oops, Destination not found",
                               style: AppConfig.titleFontStyle.copyWith(
                                 fontSize: 18,
                               ),
                             ),
-                            SizedBox(
-                              height: AppConfig.defaultMargin - 10,
-                            ),
-                            Text(
+                          ),
+                          SizedBox(
+                            height: AppConfig.defaultMargin - 10,
+                          ),
+                          Center(
+                            child: Text(
                               "Please find another destination",
                               style: AppConfig.subTitleFontStyle
                                   .copyWith(fontSize: 14, color: Colors.grey),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      Expanded(flex: 1, child: Container())
-                    ],
-                  ),
-                )
-              : Expanded(
-                  child: ListView(children: [
-                  productListWidget(),
-                  SizedBox(
-                    height: AppConfig.defaultMargin,
-                  ),
-                ])),
-        ]),
+                    )
+                  : Expanded(
+                      child: ListView(children: [
+                      productListWidget(),
+                      SizedBox(
+                        height: AppConfig.defaultMargin,
+                      ),
+                    ])),
+            ]),
       )),
     );
   }

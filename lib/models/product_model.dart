@@ -856,7 +856,7 @@ List<ProductModel> listProduct = [
     description:
         "The Medical Bali is an integrated and trusted company engaged in health services. The Medical Bali is always committed to providing the best in class health services and products in accordance with our motto, \"Serve You Better\". Our medical team has the competence and qualifications as company doctors who have a HIPERKES (Company Hygyene and Occupational Health) certificate.",
     facilities: ['Medical Check-up', 'Home Care', 'Laboratory'],
-    image: "assets/images/medical_bali_canggu.jpeg",
+    image: "assets/images/medical_bali_canggu.jpg",
     imagesPreview: [
       'https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7580401531975/The%2520Medical%2520Bali%2520%2528Canggu%2529-a4f39241-4629-4364-8b17-524efabc57b7.jpeg',
       'https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7580401531975/The%2520Medical%2520Bali%2520%2528Canggu%2529-ba1bff4b-95ba-4781-8baa-4ef6ca25ddf9.jpeg',
